@@ -1,0 +1,17 @@
+Result	taskutils/result.html#Result	result: Result	
+UnboxError	taskutils/result.html#UnboxError	result: UnboxError	
+successType	taskutils/result.html#successType.t,typedesc[Result[S,F]]	result: successType[S; F; ](X: typedesc[Result[S, F]]): typedesc[S]	
+failureType	taskutils/result.html#failureType.t,typedesc[Result[S,F]]	result: failureType[S; F; ](X: typedesc[Result[S, F]]): typedesc[F]	
+successType	taskutils/result.html#successType.t,Result[S,F]	result: successType[S; F; ](self: Result[S, F]): typedesc[S]	
+failureType	taskutils/result.html#failureType.t,Result[S,F]	result: failureType[S; F; ](self: Result[S, F]): typedesc[F]	
+success	taskutils/result.html#success,S,typedesc	result: success[S](value: S; F: typedesc): Result[S, F]	
+failure	taskutils/result.html#failure,F,typedesc	result: failure[F](value: F; S: typedesc): Result[S, F]	
+isSuccess	taskutils/result.html#isSuccess,Result[S,F]	result: isSuccess[S; F](self: Result[S, F]): bool	
+isFailure	taskutils/result.html#isFailure,Result[S,F]	result: isFailure[S; F](self: Result[S, F]): bool	
+ifSuccess	taskutils/result.html#ifSuccess,Result[S,F],,	result: ifSuccess[S; F; T](self: Result[S, F]; then: S -&gt; T; else: F -&gt; T): T	
+ifFailure	taskutils/result.html#ifFailure,Result[S,F],,	result: ifFailure[S; F; T](self: Result[S, F]; then: F -&gt; T; else: S -&gt; T): T	
+`==`	taskutils/result.html#==,Result[S,F],Result[S,F]	result: `==`[S; F](self, other: Result[S, F]): bool	
+flatMap	taskutils/result.html#flatMap,Result[A,F],	result: flatMap[A; B; F](self: Result[A, F]; f: A -&gt; Result[B, F]): Result[B, F]	
+map	taskutils/result.html#map,Result[A,F],	result: map[A; B; F](self: Result[A, F]; f: A -&gt; B): Result[B, F]	
+unboxSuccess	taskutils/result.html#unboxSuccess,Result[S,F]	result: unboxSuccess[S; F](self: Result[S, F]): S	
+unboxFailure	taskutils/result.html#unboxFailure,Result[S,F]	result: unboxFailure[S; F](self: Result[S, F]): F	

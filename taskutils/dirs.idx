@@ -1,0 +1,3 @@
+nimbleCache	taskutils/dirs.html#nimbleCache	dirs: nimbleCache(): string	
+compilerCache	taskutils/dirs.html#compilerCache,AbsoluteDir	dirs: compilerCache(baseOutputDir: AbsoluteDir): AbsoluteDir	
+outputDir	taskutils/dirs.html#outputDir,string,AbsoluteDir	dirs: outputDir(taskName: string; baseOutputDir: AbsoluteDir): AbsoluteDir	

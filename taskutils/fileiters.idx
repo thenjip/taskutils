@@ -1,0 +1,16 @@
+nimExt	taskutils/fileiters.html#nimExt	fileiters: nimExt(): string	
+nimsExt	taskutils/fileiters.html#nimsExt	fileiters: nimsExt(): string	
+files	taskutils/fileiters.html#files.i,DirPath,string,bool	fileiters: files(dir: DirPath; ext: string; relative: bool): FilePath	
+relativeFiles	taskutils/fileiters.html#relativeFiles.i,DirPath,string	fileiters: relativeFiles(dir: DirPath; ext: string): RelativeFile	
+absoluteFiles	taskutils/fileiters.html#absoluteFiles.i,DirPath,string	fileiters: absoluteFiles(dir: DirPath; ext: string): AbsoluteFile	
+filesRec	taskutils/fileiters.html#filesRec.i,DirPath,string,bool	fileiters: filesRec(dir: DirPath; ext: string; relative: bool): FilePath	
+relativeFilesRec	taskutils/fileiters.html#relativeFilesRec.i,DirPath,string	fileiters: relativeFilesRec(dir: DirPath; ext: string): RelativeFile	
+absoluteFilesRec	taskutils/fileiters.html#absoluteFilesRec.i,DirPath,string	fileiters: absoluteFilesRec(dir: DirPath; ext: string): AbsoluteFile	
+relativeNimModules	taskutils/fileiters.html#relativeNimModules.i,DirPath	fileiters: relativeNimModules(dir: DirPath): RelativeFile	
+absoluteNimModules	taskutils/fileiters.html#absoluteNimModules.i,DirPath	fileiters: absoluteNimModules(dir: DirPath): AbsoluteFile	
+relativeNimModulesRec	taskutils/fileiters.html#relativeNimModulesRec.i,DirPath	fileiters: relativeNimModulesRec(dir: DirPath): RelativeFile	
+absoluteNimModulesRec	taskutils/fileiters.html#absoluteNimModulesRec.i,DirPath	fileiters: absoluteNimModulesRec(dir: DirPath): AbsoluteDir	
+relativeNimsModules	taskutils/fileiters.html#relativeNimsModules.i,DirPath	fileiters: relativeNimsModules(dir: DirPath): RelativeFile	
+absoluteNimsModules	taskutils/fileiters.html#absoluteNimsModules.i,DirPath	fileiters: absoluteNimsModules(dir: DirPath): AbsoluteFile	
+relativeNimsModulesRec	taskutils/fileiters.html#relativeNimsModulesRec.i,DirPath	fileiters: relativeNimsModulesRec(dir: DirPath): RelativeFile	
+absoluteNimsModulesRec	taskutils/fileiters.html#absoluteNimsModulesRec.i,DirPath	fileiters: absoluteNimsModulesRec(dir: DirPath): AbsoluteDir	
