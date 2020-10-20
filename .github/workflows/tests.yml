@@ -1,0 +1,31 @@
+name: Unit tests
+on:
+  push:
+    branches-ignore:
+      - gh-pages
+  pull_request:
+    branches-ignore:
+      - gh-pages
+
+
+jobs:
+  unit_tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        nim_version: ['1.4.0']
+
+    name: 'Nim ${{ matrix.nim_version }}'
+    runs-on: ubuntu-latest
+    container: 'nimlang/nim:${{ matrix.nim_version }}-alpine'
+    timeout-minutes: 10
+
+    steps:
+      - name: 'Checkout'
+        uses: 'actions/checkout@v2'
+
+      - name: 'Setup the project'
+        run: nimble install -dy
+
+      - name: 'Run the tests'
+        run: nimble test
