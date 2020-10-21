@@ -1,0 +1,6 @@
+envNim	taskutils/envvars.html#envNim	envvars: envNim(): string	
+envNimFlags	taskutils/envvars.html#envNimFlags	envvars: envNimFlags(): string	
+parseNim	taskutils/envvars.html#parseNim,EnvVarValue	envvars: parseNim(value: EnvVarValue): Result[FilePath, proc (): ref ParseEnvError]	
+tryParseNim	taskutils/envvars.html#tryParseNim	envvars: tryParseNim(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[\n    Result[FilePath, proc (): ref ParseEnvError]]	
+parseNimFlags	taskutils/envvars.html#parseNimFlags,EnvVarValue	envvars: parseNimFlags(value: EnvVarValue): Result[string, proc (): ref ParseEnvError]	
+tryParseNimFlags	taskutils/envvars.html#tryParseNimFlags	envvars: tryParseNimFlags(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[\n    Result[string, proc (): ref ParseEnvError]]	

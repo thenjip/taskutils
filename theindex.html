@@ -63,7 +63,7 @@ function main() {
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">Index</h1>
-    Modules: <a href="taskutils/dirs.html">taskutils/dirs</a>, <a href="taskutils/envtypes.html">taskutils/envtypes</a>, <a href="taskutils/fileiters.html">taskutils/fileiters</a>, <a href="taskutils/filetypes.html">taskutils/filetypes</a>, <a href="taskutils/nimcmdline.html">taskutils/nimcmdline</a>, <a href="taskutils/optional.html">taskutils/optional</a>, <a href="taskutils/parseenv.html">taskutils/parseenv</a>, <a href="taskutils/result.html">taskutils/result</a>.<br/><p /><h2>API symbols</h2>
+    Modules: <a href="taskutils/dirs.html">taskutils/dirs</a>, <a href="taskutils/envtypes.html">taskutils/envtypes</a>, <a href="taskutils/envvars.html">taskutils/envvars</a>, <a href="taskutils/fileiters.html">taskutils/fileiters</a>, <a href="taskutils/filetypes.html">taskutils/filetypes</a>, <a href="taskutils/nimcmdline.html">taskutils/nimcmdline</a>, <a href="taskutils/optional.html">taskutils/optional</a>, <a href="taskutils/parseenv.html">taskutils/parseenv</a>, <a href="taskutils/result.html">taskutils/result</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="%60%3D%3D%60" href="#%60%3D%3D%60"><span>`==`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="result: `==`[S; F](self, other: Result[S, F]): bool" href="taskutils/result.html#%3D%3D%2CResult%5BS%2CF%5D%2CResult%5BS%2CF%5D">result: `==`[S; F](self, other: Result[S, F]): bool</a></li>
@@ -107,6 +107,14 @@ function main() {
 <dt><a name="DirPath" href="#DirPath"><span>DirPath:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="filetypes: DirPath" href="taskutils/filetypes.html#DirPath">filetypes: DirPath</a></li>
+          </ul></dd>
+<dt><a name="envNim" href="#envNim"><span>envNim:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="envvars: envNim(): string" href="taskutils/envvars.html#envNim">envvars: envNim(): string</a></li>
+          </ul></dd>
+<dt><a name="envNimFlags" href="#envNimFlags"><span>envNimFlags:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="envvars: envNimFlags(): string" href="taskutils/envvars.html#envNimFlags">envvars: envNimFlags(): string</a></li>
           </ul></dd>
 <dt><a name="EnvVarName" href="#EnvVarName"><span>EnvVarName:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -222,6 +230,14 @@ function main() {
           <li><a class="reference external"
           data-doc-search-tag="parseenv: parseEnvError(msg: string): ref ParseEnvError" href="taskutils/parseenv.html#parseEnvError%2Cstring">parseenv: parseEnvError(msg: string): ref ParseEnvError</a></li>
           </ul></dd>
+<dt><a name="parseNim" href="#parseNim"><span>parseNim:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="envvars: parseNim(value: EnvVarValue): Result[FilePath, proc (): ref ParseEnvError]" href="taskutils/envvars.html#parseNim%2CEnvVarValue">envvars: parseNim(value: EnvVarValue): Result[FilePath, proc (): ref ParseEnvError]</a></li>
+          </ul></dd>
+<dt><a name="parseNimFlags" href="#parseNimFlags"><span>parseNimFlags:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="envvars: parseNimFlags(value: EnvVarValue): Result[string, proc (): ref ParseEnvError]" href="taskutils/envvars.html#parseNimFlags%2CEnvVarValue">envvars: parseNimFlags(value: EnvVarValue): Result[string, proc (): ref ParseEnvError]</a></li>
+          </ul></dd>
 <dt><a name="readOrEmpty" href="#readOrEmpty"><span>readOrEmpty:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="parseenv: readOrEmpty(name: EnvVarName; read: EnvVarName -&gt; EnvVarValue): Optional[
@@ -288,6 +304,18 @@ function main() {
                parse: EnvVarValue -&gt; Result[T, E]): Optional[Result[T, E]]" href="taskutils/parseenv.html#tryParse%2CEnvVarName%2C%2C">parseenv: tryParse[T; E](name: EnvVarName; tryRead: EnvVarName -&gt; Optional[EnvVarValue];
                parse: EnvVarValue -&gt; Result[T, E]): Optional[Result[T, E]]</a></li>
           </ul></dd>
+<dt><a name="tryParseNim" href="#tryParseNim"><span>tryParseNim:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="envvars: tryParseNim(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[
+    Result[FilePath, proc (): ref ParseEnvError]]" href="taskutils/envvars.html#tryParseNim">envvars: tryParseNim(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[
+    Result[FilePath, proc (): ref ParseEnvError]]</a></li>
+          </ul></dd>
+<dt><a name="tryParseNimFlags" href="#tryParseNimFlags"><span>tryParseNimFlags:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="envvars: tryParseNimFlags(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[
+    Result[string, proc (): ref ParseEnvError]]" href="taskutils/envvars.html#tryParseNimFlags">envvars: tryParseNimFlags(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[
+    Result[string, proc (): ref ParseEnvError]]</a></li>
+          </ul></dd>
 <dt><a name="UnboxError" href="#UnboxError"><span>UnboxError:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="result: UnboxError" href="taskutils/result.html#UnboxError">result: UnboxError</a></li>
@@ -305,7 +333,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-21 07:38:19 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-21 07:44:45 UTC</small>
       </div>
     </div>
   </div>
