@@ -1,6 +1,20 @@
 import envtypes, optional, result
 
-import std/[sugar]
+import std/[strformat, sugar]
+
+
+
+type
+  ParseEnvError* = object of CatchableError
+
+
+
+proc parseEnvError* (msg: string): ref ParseEnvError =
+  ParseEnvError.newException(msg)
+
+
+proc parseEnvError* (name: EnvVarName; reason: string): ref ParseEnvError =
+  parseEnvError(fmt"{name}: {reason}")
 
 
 
