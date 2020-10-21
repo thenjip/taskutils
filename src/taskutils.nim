@@ -1,6 +1,7 @@
 import taskutils/[
   dirs,
   envtypes,
+  envvars,
   fileiters,
   filetypes,
   nimcmdline,
@@ -14,6 +15,7 @@ import taskutils/[
 export
   dirs,
   envtypes,
+  envvars,
   fileiters,
   filetypes,
   nimcmdline,
