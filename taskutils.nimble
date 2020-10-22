@@ -120,6 +120,8 @@ define(
 
 
     genDocCmd().selfExec()
+    withDir outputDir():
+      fmt"theindex{ExtSep}html".cpFile(fmt"index{ExtSep}.html")
 )
 
 
