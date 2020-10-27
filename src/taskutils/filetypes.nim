@@ -5,7 +5,5 @@ type
   RelativeDir* = string
   RelativeFile* = string
 
-  DirPath* = string
-    ## Can be absolute or relative depending on the context.
-  FilePath* = string
-    ## Can be absolute or relative depending on the context.
+  DirPath* = AbsoluteDir | RelativeDir
+  FilePath* = AbsoluteFile | RelativeFile
