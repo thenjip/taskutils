@@ -108,15 +108,15 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
-      <ul class="simple nested-toc-section">readOrEmpty
-      <li><a class="reference" href="#readOrEmpty%2CEnvVarName%2C"
-    title="readOrEmpty(name: EnvVarName; read: EnvVarName -&gt; EnvVarValue): Optional[
-    EnvVarValue]">readOrEmpty,EnvVarName,<span class="attachedType"></span></a></li>
+      <ul class="simple nested-toc-section">findValue
+      <li><a class="reference" href="#findValue%2CEnvVarName%2C%2C"
+    title="findValue(name: EnvVarName; exists: EnvVarName -&gt; bool;
+          read: EnvVarName -&gt; EnvVarValue): Optional[EnvVarValue]">findValue,EnvVarName,,<span class="attachedType"></span></a></li>
 
   </ul>
   <ul class="simple nested-toc-section">tryParse
       <li><a class="reference" href="#tryParse%2CEnvVarName%2C%2C"
-    title="tryParse[T; E](name: EnvVarName; tryRead: EnvVarName -&gt; Optional[EnvVarValue];
+    title="tryParse[T; E](name: EnvVarName; find: EnvVarName -&gt; Optional[EnvVarValue];
                parse: EnvVarValue -&gt; Result[T, E]): Optional[Result[T, E]]">tryParse,EnvVarName,,<span class="attachedType"></span></a></li>
 
   </ul>
@@ -185,12 +185,13 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/parseenv.nim#L16" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<a id="readOrEmpty,EnvVarName,"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#readOrEmpty%2CEnvVarName%2C"><span class="Identifier">readOrEmpty</span></a><span class="Other">(</span><span class="Identifier">name</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a><span class="Other">;</span> <span class="Identifier">read</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a> <span class="Operator">-&gt;</span> <a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">)</span><span class="Other">:</span> <a href="optional.html#Optional"><span class="Identifier">Optional</span></a><span class="Other">[</span>
-    <a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="findValue,EnvVarName,,"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#findValue%2CEnvVarName%2C%2C"><span class="Identifier">findValue</span></a><span class="Other">(</span><span class="Identifier">name</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a><span class="Other">;</span> <span class="Identifier">exists</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a> <span class="Operator">-&gt;</span> <span class="Identifier">bool</span><span class="Other">;</span>
+               <span class="Identifier">read</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a> <span class="Operator">-&gt;</span> <a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">)</span><span class="Other">:</span> <a href="optional.html#Optional"><span class="Identifier">Optional</span></a><span class="Other">[</span><a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-If the environment variable value is an empty string, an empty <tt class="docutils literal"><span class="pre">Option</span></tt> is returned. 
+
 &nbsp;&nbsp;<a
 href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/parseenv.nim#L21"
 class="link-seesrc" target="_blank">Source</a>
@@ -198,16 +199,15 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 <a id="tryParse,EnvVarName,,"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#tryParse%2CEnvVarName%2C%2C"><span class="Identifier">tryParse</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">E</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">name</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a><span class="Other">;</span>
-                    <span class="Identifier">tryRead</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a> <span class="Operator">-&gt;</span> <a href="optional.html#Optional"><span class="Identifier">Optional</span></a><span class="Other">[</span><a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">]</span><span class="Other">;</span>
+<dt><pre><span class="Keyword">proc</span> <a href="#tryParse%2CEnvVarName%2C%2C"><span class="Identifier">tryParse</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">E</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">name</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a><span class="Other">;</span> <span class="Identifier">find</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a> <span class="Operator">-&gt;</span> <a href="optional.html#Optional"><span class="Identifier">Optional</span></a><span class="Other">[</span><a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">]</span><span class="Other">;</span>
                     <span class="Identifier">parse</span><span class="Other">:</span> <a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a> <span class="Operator">-&gt;</span> <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Identifier">E</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <a href="optional.html#Optional"><span class="Identifier">Optional</span></a><span class="Other">[</span><a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Identifier">E</span><span class="Other">]</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/parseenv.nim#L37"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/parseenv.nim#L32"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/parseenv.nim#L37" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/parseenv.nim#L32" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -220,7 +220,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-22 15:53:39 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-28 11:07:46 UTC</small>
       </div>
     </div>
   </div>

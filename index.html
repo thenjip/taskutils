@@ -100,6 +100,12 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="fileiters: absoluteNimsModulesRec(dir: DirPath): AbsoluteDir" href="taskutils/fileiters.html#absoluteNimsModulesRec.i%2CDirPath">fileiters: absoluteNimsModulesRec(dir: DirPath): AbsoluteDir</a></li>
           </ul></dd>
+<dt><a name="boxedType" href="#boxedType"><span>boxedType:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="optional: boxedType[T; ](self: Optional[T]): typedesc[T]" href="taskutils/optional.html#boxedType.t%2COptional%5BT%5D">optional: boxedType[T; ](self: Optional[T]): typedesc[T]</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="optional: boxedType[T; ](X: typedesc[Optional[T]]): typedesc[T]" href="taskutils/optional.html#boxedType.t%2Ctypedesc%5BOptional%5BT%5D%5D">optional: boxedType[T; ](X: typedesc[Optional[T]]): typedesc[T]</a></li>
+          </ul></dd>
 <dt><a name="compilerCache" href="#compilerCache"><span>compilerCache:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="dirs: compilerCache(baseOutputDir: AbsoluteDir): AbsoluteDir" href="taskutils/dirs.html#compilerCache%2CAbsoluteDir">dirs: compilerCache(baseOutputDir: AbsoluteDir): AbsoluteDir</a></li>
@@ -145,6 +151,12 @@ function main() {
 <dt><a name="filesRec" href="#filesRec"><span>filesRec:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="fileiters: filesRec(dir: DirPath; ext: string; relative: bool): FilePath" href="taskutils/fileiters.html#filesRec.i%2CDirPath%2Cstring%2Cbool">fileiters: filesRec(dir: DirPath; ext: string; relative: bool): FilePath</a></li>
+          </ul></dd>
+<dt><a name="findValue" href="#findValue"><span>findValue:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="parseenv: findValue(name: EnvVarName; exists: EnvVarName -&gt; bool;
+          read: EnvVarName -&gt; EnvVarValue): Optional[EnvVarValue]" href="taskutils/parseenv.html#findValue%2CEnvVarName%2C%2C">parseenv: findValue(name: EnvVarName; exists: EnvVarName -&gt; bool;
+          read: EnvVarName -&gt; EnvVarValue): Optional[EnvVarValue]</a></li>
           </ul></dd>
 <dt><a name="flatMap" href="#flatMap"><span>flatMap:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -238,12 +250,6 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="envvars: parseNimFlags(value: EnvVarValue): Result[string, proc (): ref ParseEnvError]" href="taskutils/envvars.html#parseNimFlags%2CEnvVarValue">envvars: parseNimFlags(value: EnvVarValue): Result[string, proc (): ref ParseEnvError]</a></li>
           </ul></dd>
-<dt><a name="readOrEmpty" href="#readOrEmpty"><span>readOrEmpty:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="parseenv: readOrEmpty(name: EnvVarName; read: EnvVarName -&gt; EnvVarValue): Optional[
-    EnvVarValue]" href="taskutils/parseenv.html#readOrEmpty%2CEnvVarName%2C">parseenv: readOrEmpty(name: EnvVarName; read: EnvVarName -&gt; EnvVarValue): Optional[
-    EnvVarValue]</a></li>
-          </ul></dd>
 <dt><a name="RelativeDir" href="#RelativeDir"><span>RelativeDir:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="filetypes: RelativeDir" href="taskutils/filetypes.html#RelativeDir">filetypes: RelativeDir</a></li>
@@ -300,8 +306,8 @@ function main() {
           </ul></dd>
 <dt><a name="tryParse" href="#tryParse"><span>tryParse:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="parseenv: tryParse[T; E](name: EnvVarName; tryRead: EnvVarName -&gt; Optional[EnvVarValue];
-               parse: EnvVarValue -&gt; Result[T, E]): Optional[Result[T, E]]" href="taskutils/parseenv.html#tryParse%2CEnvVarName%2C%2C">parseenv: tryParse[T; E](name: EnvVarName; tryRead: EnvVarName -&gt; Optional[EnvVarValue];
+          data-doc-search-tag="parseenv: tryParse[T; E](name: EnvVarName; find: EnvVarName -&gt; Optional[EnvVarValue];
+               parse: EnvVarValue -&gt; Result[T, E]): Optional[Result[T, E]]" href="taskutils/parseenv.html#tryParse%2CEnvVarName%2C%2C">parseenv: tryParse[T; E](name: EnvVarName; find: EnvVarName -&gt; Optional[EnvVarValue];
                parse: EnvVarValue -&gt; Result[T, E]): Optional[Result[T, E]]</a></li>
           </ul></dd>
 <dt><a name="tryParseNim" href="#tryParseNim"><span>tryParseNim:</span></a></dt><dd><ul class="simple">
@@ -333,7 +339,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-22 15:53:39 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-28 11:07:46 UTC</small>
       </div>
     </div>
   </div>

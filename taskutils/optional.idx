@@ -1,4 +1,6 @@
 Optional	taskutils/optional.html#Optional	optional: Optional	
+boxedType	taskutils/optional.html#boxedType.t,typedesc[Optional[T]]	optional: boxedType[T; ](X: typedesc[Optional[T]]): typedesc[T]	
+boxedType	taskutils/optional.html#boxedType.t,Optional[T]	optional: boxedType[T; ](self: Optional[T]): typedesc[T]	
 ifSome	taskutils/optional.html#ifSome,Optional[A],,	optional: ifSome[A; B](self: Optional[A]; then: A -&gt; B; else: () -&gt; B): B	
 ifNone	taskutils/optional.html#ifNone,Optional[A],,	optional: ifNone[A; B](self: Optional[A]; then: () -&gt; B; else: A -&gt; B): B	
 getOr	taskutils/optional.html#getOr,Optional[T],	optional: getOr[T](self: Optional[T]; else: () -&gt; T): T	

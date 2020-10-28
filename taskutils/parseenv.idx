@@ -1,5 +1,5 @@
 ParseEnvError	taskutils/parseenv.html#ParseEnvError	parseenv: ParseEnvError	
 parseEnvError	taskutils/parseenv.html#parseEnvError,string	parseenv: parseEnvError(msg: string): ref ParseEnvError	
 parseEnvError	taskutils/parseenv.html#parseEnvError,EnvVarName,string	parseenv: parseEnvError(name: EnvVarName; reason: string): ref ParseEnvError	
-readOrEmpty	taskutils/parseenv.html#readOrEmpty,EnvVarName,	parseenv: readOrEmpty(name: EnvVarName; read: EnvVarName -&gt; EnvVarValue): Optional[\n    EnvVarValue]	
-tryParse	taskutils/parseenv.html#tryParse,EnvVarName,,	parseenv: tryParse[T; E](name: EnvVarName; tryRead: EnvVarName -&gt; Optional[EnvVarValue];\n               parse: EnvVarValue -&gt; Result[T, E]): Optional[Result[T, E]]	
+findValue	taskutils/parseenv.html#findValue,EnvVarName,,	parseenv: findValue(name: EnvVarName; exists: EnvVarName -&gt; bool;\n          read: EnvVarName -&gt; EnvVarValue): Optional[EnvVarValue]	
+tryParse	taskutils/parseenv.html#tryParse,EnvVarName,,	parseenv: tryParse[T; E](name: EnvVarName; find: EnvVarName -&gt; Optional[EnvVarValue];\n               parse: EnvVarValue -&gt; Result[T, E]): Optional[Result[T, E]]	

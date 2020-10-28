@@ -159,15 +159,14 @@ function main() {
 <dl class="item">
 <a id="tryParseNim"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#tryParseNim"><span class="Identifier">tryParseNim</span></a><span class="Other">(</span><span class="Identifier">tryRead</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a> <span class="Operator">-&gt;</span> <a href="optional.html#Optional"><span class="Identifier">Optional</span></a><span class="Other">[</span><a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <a href="optional.html#Optional"><span class="Identifier">Optional</span></a><span class="Other">[</span>
-    <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><a href="filetypes.html#FilePath"><span class="Identifier">FilePath</span></a><span class="Other">,</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ref</span> <a href="parseenv.html#ParseEnvError"><span class="Identifier">ParseEnvError</span></a><span class="Other">]</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><a href="filetypes.html#FilePath"><span class="Identifier">FilePath</span></a><span class="Other">,</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ref</span> <a href="parseenv.html#ParseEnvError"><span class="Identifier">ParseEnvError</span></a><span class="Other">]</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L26"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L29"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/envvars.nim#L26" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/envvars.nim#L29" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="tryParseNimFlags"></a>
@@ -177,9 +176,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L39"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L45"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/envvars.nim#L39" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/envvars.nim#L45" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -191,7 +190,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dt><pre><span class="Keyword">func</span> <a href="#envNim"><span class="Identifier">envNim</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-
+The name of the environment variable for the path to the Nim compiler. 
 &nbsp;&nbsp;<a
 href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L7"
 class="link-seesrc" target="_blank">Source</a>
@@ -202,23 +201,23 @@ class="link-seesrc" target="_blank">Source</a>
 <dt><pre><span class="Keyword">func</span> <a href="#envNimFlags"><span class="Identifier">envNimFlags</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-
+The name of the environment variable for additional compiler options. 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L11"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L14"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/envvars.nim#L11" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/envvars.nim#L14" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="parseNim,EnvVarValue"></a>
 <dt><pre><span class="Keyword">func</span> <a href="#parseNim%2CEnvVarValue"><span class="Identifier">parseNim</span></a><span class="Other">(</span><span class="Identifier">value</span><span class="Other">:</span> <a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">)</span><span class="Other">:</span> <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><a href="filetypes.html#FilePath"><span class="Identifier">FilePath</span></a><span class="Other">,</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ref</span> <a href="parseenv.html#ParseEnvError"><span class="Identifier">ParseEnvError</span></a><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-
+Does currently nothing other than returning a success. 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L16"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L22"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/envvars.nim#L16" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/envvars.nim#L22" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="parseNimFlags,EnvVarValue"></a>
@@ -226,11 +225,11 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Keyword">proc</span> <span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ref</span> <a href="parseenv.html#ParseEnvError"><span class="Identifier">ParseEnvError</span></a><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-
+Does currently nothing other than returning a success. 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L33"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L36"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/envvars.nim#L33" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/envvars.nim#L36" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -243,7 +242,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-22 15:53:39 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-28 11:07:46 UTC</small>
       </div>
     </div>
   </div>
