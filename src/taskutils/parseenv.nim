@@ -31,7 +31,7 @@ proc findValue* (
 
 proc tryParse* [T; E](
   name: EnvVarName;
-  tryRead: EnvVarName -> Optional[EnvVarValue];
+  find: EnvVarName -> Optional[EnvVarValue];
   parse: EnvVarValue -> Result[T, E]
 ): Optional[Result[T, E]] =
-  name.tryRead().map(parse)
+  find(name).map(parse)
