@@ -18,20 +18,15 @@ proc parseEnvError* (name: EnvVarName; reason: string): ref ParseEnvError =
 
 
 
-proc readOrEmpty* (
+proc findValue* (
   name: EnvVarName;
+  exists: EnvVarName -> bool;
   read: EnvVarName -> EnvVarValue
 ): Optional[EnvVarValue] =
-  ##[
-    If the environment variable value is an empty string, an empty `Option` is
-    returned.
-  ]##
-  let value = name.read()
-
-  if value.len() == 0:
-    value.typeof().none()
+  if name.exists():
+    name.read().some()
   else:
-    value.some()
+    result.boxedType().none()
 
 
 proc tryParse* [T; E](
