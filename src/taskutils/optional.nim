@@ -11,6 +11,15 @@ type
 
 
 
+template boxedType* [T](X: typedesc[Optional[T]]): typedesc[T] =
+  T
+
+
+template boxedType* [T](self: Optional[T]): typedesc[T] =
+  self.typeof().boxedType()
+
+
+
 proc ifSome* [A; B](self: Optional[A]; then: A -> B; `else`: () -> B): B =
   if self.isSome():
     self.unsafeGet().then()
