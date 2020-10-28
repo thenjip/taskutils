@@ -81,15 +81,18 @@ func parseNimOptimize (
       invalidValue.failure(result.successType())
 
 
-proc getEnvOrEmpty (name: EnvVarName): Optional[EnvVarValue] =
-  ## Returns an empty Optional when `getEnv()` returns an empty string.
-  name.readOrEmpty(key => key.getEnv())
+proc getEnvOrEmpty (name: EnvVarName): EnvVarValue =
+  name.getEnv()
+
+
+proc tryGetEnv (name: EnvVarName): Optional[EnvVarValue] =
+  name.findValue(existsEnv, getEnvOrEmpty)
 
 
 proc tryParseNimOptimize (): Optional[
   Result[NimOptimize, () -> ref ParseEnvError]
 ] =
-  envNimOptimize().tryParse(getEnvOrEmpty, parseNimOptimize)
+  envNimOptimize().tryParse(tryGetEnv, parseNimOptimize)
 
 
 discard

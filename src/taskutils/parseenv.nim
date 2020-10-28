@@ -14,29 +14,24 @@ proc parseEnvError* (msg: string): ref ParseEnvError =
 
 
 proc parseEnvError* (name: EnvVarName; reason: string): ref ParseEnvError =
-  parseEnvError(fmt"{name}: {reason}")
+  fmt"{name}: {reason}".parseEnvError()
 
 
 
-proc readOrEmpty* (
+proc findValue* (
   name: EnvVarName;
+  exists: EnvVarName -> bool;
   read: EnvVarName -> EnvVarValue
 ): Optional[EnvVarValue] =
-  ##[
-    If the environment variable value is an empty string, an empty `Option` is
-    returned.
-  ]##
-  let value = name.read()
-
-  if value.len() == 0:
-    value.typeof().none()
+  if name.exists():
+    name.read().some()
   else:
-    value.some()
+    result.boxedType().none()
 
 
 proc tryParse* [T; E](
   name: EnvVarName;
-  tryRead: EnvVarName -> Optional[EnvVarValue];
+  find: EnvVarName -> Optional[EnvVarValue];
   parse: EnvVarValue -> Result[T, E]
 ): Optional[Result[T, E]] =
-  name.tryRead().map(parse)
+  find(name).map(parse)

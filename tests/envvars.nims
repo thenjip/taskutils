@@ -1,4 +1,4 @@
-import taskutils/[envtypes, envvars, parseenv, optional, result]
+import taskutils/[envtypes, envvars, filetypes, parseenv, optional, result]
 
 import std/[os, strutils, sugar, tables]
 
@@ -21,16 +21,17 @@ proc testTryParseNim () =
 
     doAssert(actual == expected)
 
-  proc testInvalid (value: EnvVarValue) =
+  proc testNotFound () =
     let
-      env = {envNim(): value}.toTable()
-      result = tryParseNim(key => env.findValue(key)).get()
+      env = {"ABC": "abc"}.toTable()
+      expected = Result[FilePath, () -> ref ParseEnvError].none()
+      actual = tryParseNim(key => env.findValue(key))
 
-    doAssert(result.isFailure())
+    doAssert(actual == expected)
 
   testValid("nim")
   testValid("usr" / "bin" / "nim")
-  testInvalid("home" / "user" / ".local" / "bin" / "nim.")
+  testNotFound()
 
 
 proc testTryParseNimFlags () =
@@ -42,8 +43,17 @@ proc testTryParseNimFlags () =
 
     doAssert(actual == expected)
 
+  proc testNotFound () =
+    let
+      env = {"ABC": "abc"}.toTable()
+      expected = Result[string, () -> ref ParseEnvError].none()
+      actual = tryParseNimFlags(key => env.findValue(key))
+
+    doAssert(actual == expected)
+
   testValid("-d:nodejs")
   testValid(["--opt:speed", "--stackTrace:off", "-f"].join($' '))
+  testNotFound()
 
 
 
