@@ -1,26 +1,29 @@
 import envtypes, filetypes, optional, parseenv, result
 
-import std/[os, sugar]
+import std/[sugar]
 
 
 
 func envNim* (): string =
+  ##[
+    The name of the environment variable for the path to the Nim compiler.
+  ]##
   "NIM"
 
 
 func envNimFlags* (): string =
+  ##[
+    The name of the environment variable for additional compiler options.
+  ]##
   "NIMFLAGS"
 
 
 
 func parseNim* (value: EnvVarValue): Result[FilePath, () -> ref ParseEnvError] =
-  proc invalidFileName (): ref ParseEnvError {.closure.} =
-    envNim().parseEnvError("Invalid file name.")
-
-  if value.isValidFilename():
-    value.success(result.failureType())
-  else:
-    invalidFileName.failure(result.successType())
+  ##[
+    Does currently nothing other than returning a success.
+  ]##
+  value.success(result.failureType())
 
 
 proc tryParseNim* (
@@ -33,6 +36,9 @@ proc tryParseNim* (
 func parseNimFlags* (
   value: EnvVarValue
 ): Result[string, () -> ref ParseEnvError] =
+  ##[
+    Does currently nothing other than returning a success.
+  ]##
   value.success(result.failureType())
 
 
