@@ -1,3 +1,15 @@
+##[
+  This module provides the result monad.
+
+  A result can be either a success or a failure.
+
+  In NimScript, it can be used to handle errors without having to raise/catch
+  exceptions. Besides, the NimScript backend does not currently allow to catch
+  exceptions.
+]##
+
+
+
 import std/[sugar]
 
 
@@ -74,10 +86,16 @@ proc flatMap* [A; B; F](
   self: Result[A, F];
   f: A -> Result[B, F]
 ): Result[B, F] =
+  ##[
+    Executes `f` if `self` is a success.
+  ]##
   self.ifSuccess(a => a.f(), fail => fail.failure(B))
 
 
 proc map* [A; B; F](self: Result[A, F]; f: A -> B): Result[B, F] =
+  ##[
+    Executes `f` if `self` is a success.
+  ]##
   self.flatMap((a: A) => a.f().success(F))
 
 
