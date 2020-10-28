@@ -63,7 +63,7 @@ function main() {
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">Index</h1>
-    Modules: <a href="taskutils/dirs.html">taskutils/dirs</a>, <a href="taskutils/envtypes.html">taskutils/envtypes</a>, <a href="taskutils/envvars.html">taskutils/envvars</a>, <a href="taskutils/fileiters.html">taskutils/fileiters</a>, <a href="taskutils/filetypes.html">taskutils/filetypes</a>, <a href="taskutils/nimcmdline.html">taskutils/nimcmdline</a>, <a href="taskutils/optional.html">taskutils/optional</a>, <a href="taskutils/parseenv.html">taskutils/parseenv</a>, <a href="taskutils/result.html">taskutils/result</a>.<br/><p /><h2>API symbols</h2>
+    Modules: <a href="taskutils/dirs.html">taskutils/dirs</a>, <a href="taskutils/envtypes.html">taskutils/envtypes</a>, <a href="taskutils/envvars.html">taskutils/envvars</a>, <a href="taskutils/fileiters.html">taskutils/fileiters</a>, <a href="taskutils/files.html">taskutils/files</a>, <a href="taskutils/filetypes.html">taskutils/filetypes</a>, <a href="taskutils/nimcmdline.html">taskutils/nimcmdline</a>, <a href="taskutils/optional.html">taskutils/optional</a>, <a href="taskutils/parseenv.html">taskutils/parseenv</a>, <a href="taskutils/result.html">taskutils/result</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="%60%3D%3D%60" href="#%60%3D%3D%60"><span>`==`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="result: `==`[S; F](self, other: Result[S, F]): bool" href="taskutils/result.html#%3D%3D%2CResult%5BS%2CF%5D%2CResult%5BS%2CF%5D">result: `==`[S; F](self, other: Result[S, F]): bool</a></li>
@@ -130,6 +130,10 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="envtypes: EnvVarValue" href="taskutils/envtypes.html#EnvVarValue">envtypes: EnvVarValue</a></li>
           </ul></dd>
+<dt><a name="exeExists" href="#exeExists"><span>exeExists:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="files: exeExists(exe: FilePath): bool" href="taskutils/files.html#exeExists%2CFilePath">files: exeExists(exe: FilePath): bool</a></li>
+          </ul></dd>
 <dt><a name="failure" href="#failure"><span>failure:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="result: failure[F](value: F; S: typedesc): Result[S, F]" href="taskutils/result.html#failure%2CF%2Ctypedesc">result: failure[F](value: F; S: typedesc): Result[S, F]</a></li>
@@ -151,6 +155,10 @@ function main() {
 <dt><a name="filesRec" href="#filesRec"><span>filesRec:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="fileiters: filesRec(dir: DirPath; ext: string; relative: bool): FilePath" href="taskutils/fileiters.html#filesRec.i%2CDirPath%2Cstring%2Cbool">fileiters: filesRec(dir: DirPath; ext: string; relative: bool): FilePath</a></li>
+          </ul></dd>
+<dt><a name="findExec" href="#findExec"><span>findExec:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="files: findExec(exe: FilePath): Optional[FilePath]" href="taskutils/files.html#findExec%2CFilePath">files: findExec(exe: FilePath): Optional[FilePath]</a></li>
           </ul></dd>
 <dt><a name="findValue" href="#findValue"><span>findValue:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -339,7 +347,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-28 11:07:46 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-28 14:13:00 UTC</small>
       </div>
     </div>
   </div>

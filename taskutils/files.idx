@@ -1,0 +1,2 @@
+exeExists	taskutils/files.html#exeExists,FilePath	files: exeExists(exe: FilePath): bool	
+findExec	taskutils/files.html#findExec,FilePath	files: findExec(exe: FilePath): Optional[FilePath]	
