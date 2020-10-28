@@ -14,7 +14,7 @@ proc parseEnvError* (msg: string): ref ParseEnvError =
 
 
 proc parseEnvError* (name: EnvVarName; reason: string): ref ParseEnvError =
-  parseEnvError(fmt"{name}: {reason}")
+  fmt"{name}: {reason}".parseEnvError()
 
 
 
