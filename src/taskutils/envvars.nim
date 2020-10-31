@@ -4,14 +4,14 @@ import std/[sugar]
 
 
 
-func envNim* (): string =
+func envNim* (): EnvVarName =
   ##[
     The name of the environment variable for the path to the Nim compiler.
   ]##
   "NIM"
 
 
-func envNimFlags* (): string =
+func envNimFlags* (): EnvVarName =
   ##[
     The name of the environment variable for additional compiler options.
   ]##
@@ -19,7 +19,7 @@ func envNimFlags* (): string =
 
 
 
-func parseNim* (value: EnvVarValue): Result[FilePath, () -> ref ParseEnvError] =
+func parseNim* (value: EnvVarValue): ParseEnvResult[FilePath] =
   ##[
     Does currently nothing other than returning a success.
   ]##
@@ -28,14 +28,12 @@ func parseNim* (value: EnvVarValue): Result[FilePath, () -> ref ParseEnvError] =
 
 proc tryParseNim* (
   tryRead: EnvVarName -> Optional[EnvVarValue]
-): Optional[Result[FilePath, () -> ref ParseEnvError]] =
+): Optional[ParseEnvResult[FilePath]] =
   envNim().tryRead().map(parseNim)
 
 
 
-func parseNimFlags* (
-  value: EnvVarValue
-): Result[string, () -> ref ParseEnvError] =
+func parseNimFlags* (value: EnvVarValue): ParseEnvResult[string] =
   ##[
     Does currently nothing other than returning a success.
   ]##
@@ -44,5 +42,5 @@ func parseNimFlags* (
 
 proc tryParseNimFlags* (
   tryRead: EnvVarName -> Optional[EnvVarValue]
-): Optional[Result[string, () -> ref ParseEnvError]] =
+): Optional[ParseEnvResult[string]] =
   envNimFlags().tryRead().map(parseNimFlags)
