@@ -103,13 +103,13 @@ function main() {
       <ul class="simple nested-toc-section">tryParseNim
       <li><a class="reference" href="#tryParseNim"
     title="tryParseNim(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[
-    Result[FilePath, proc (): ref ParseEnvError]]">tryParseNim<span class="attachedType"></span></a></li>
+    ParseEnvResult[FilePath]]">tryParseNim<span class="attachedType"></span></a></li>
 
   </ul>
   <ul class="simple nested-toc-section">tryParseNimFlags
       <li><a class="reference" href="#tryParseNimFlags"
     title="tryParseNimFlags(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[
-    Result[string, proc (): ref ParseEnvError]]">tryParseNimFlags<span class="attachedType"></span></a></li>
+    ParseEnvResult[string]]">tryParseNimFlags<span class="attachedType"></span></a></li>
 
   </ul>
 
@@ -120,22 +120,22 @@ function main() {
   <ul class="simple simple-toc-section">
       <ul class="simple nested-toc-section">envNim
       <li><a class="reference" href="#envNim"
-    title="envNim(): string">envNim<span class="attachedType"></span></a></li>
+    title="envNim(): EnvVarName">envNim<span class="attachedType"></span></a></li>
 
   </ul>
   <ul class="simple nested-toc-section">envNimFlags
       <li><a class="reference" href="#envNimFlags"
-    title="envNimFlags(): string">envNimFlags<span class="attachedType"></span></a></li>
+    title="envNimFlags(): EnvVarName">envNimFlags<span class="attachedType"></span></a></li>
 
   </ul>
   <ul class="simple nested-toc-section">parseNim
       <li><a class="reference" href="#parseNim%2CEnvVarValue"
-    title="parseNim(value: EnvVarValue): Result[FilePath, proc (): ref ParseEnvError]">parseNim,EnvVarValue<span class="attachedType"></span></a></li>
+    title="parseNim(value: EnvVarValue): ParseEnvResult[FilePath]">parseNim,EnvVarValue<span class="attachedType"></span></a></li>
 
   </ul>
   <ul class="simple nested-toc-section">parseNimFlags
       <li><a class="reference" href="#parseNimFlags%2CEnvVarValue"
-    title="parseNimFlags(value: EnvVarValue): Result[string, proc (): ref ParseEnvError]">parseNimFlags,EnvVarValue<span class="attachedType"></span></a></li>
+    title="parseNimFlags(value: EnvVarValue): ParseEnvResult[string]">parseNimFlags,EnvVarValue<span class="attachedType"></span></a></li>
 
   </ul>
 
@@ -159,7 +159,7 @@ function main() {
 <dl class="item">
 <a id="tryParseNim"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#tryParseNim"><span class="Identifier">tryParseNim</span></a><span class="Other">(</span><span class="Identifier">tryRead</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a> <span class="Operator">-&gt;</span> <a href="optional.html#Optional"><span class="Identifier">Optional</span></a><span class="Other">[</span><a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <a href="optional.html#Optional"><span class="Identifier">Optional</span></a><span class="Other">[</span>
-    <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><a href="filetypes.html#FilePath"><span class="Identifier">FilePath</span></a><span class="Other">,</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ref</span> <a href="parseenv.html#ParseEnvError"><span class="Identifier">ParseEnvError</span></a><span class="Other">]</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <a href="parseenv.html#ParseEnvResult"><span class="Identifier">ParseEnvResult</span></a><span class="Other">[</span><a href="filetypes.html#FilePath"><span class="Identifier">FilePath</span></a><span class="Other">]</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -171,14 +171,14 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 <a id="tryParseNimFlags"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#tryParseNimFlags"><span class="Identifier">tryParseNimFlags</span></a><span class="Other">(</span><span class="Identifier">tryRead</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a> <span class="Operator">-&gt;</span> <a href="optional.html#Optional"><span class="Identifier">Optional</span></a><span class="Other">[</span><a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <a href="optional.html#Optional"><span class="Identifier">Optional</span></a><span class="Other">[</span>
-    <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ref</span> <a href="parseenv.html#ParseEnvError"><span class="Identifier">ParseEnvError</span></a><span class="Other">]</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <a href="parseenv.html#ParseEnvResult"><span class="Identifier">ParseEnvResult</span></a><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L45"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/envvars.nim#L43"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/envvars.nim#L45" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/envvars.nim#L43" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -187,7 +187,7 @@ class="link-seesrc" target="_blank">Source</a>
 <h1><a class="toc-backref" href="#13">Funcs</a></h1>
 <dl class="item">
 <a id="envNim"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#envNim"><span class="Identifier">envNim</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">func</span> <a href="#envNim"><span class="Identifier">envNim</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 The name of the environment variable for the path to the Nim compiler. 
@@ -198,7 +198,7 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 <a id="envNimFlags"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#envNimFlags"><span class="Identifier">envNimFlags</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">func</span> <a href="#envNimFlags"><span class="Identifier">envNimFlags</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <a href="envtypes.html#EnvVarName"><span class="Identifier">EnvVarName</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 The name of the environment variable for additional compiler options. 
@@ -209,8 +209,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 <a id="parseNim,EnvVarValue"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#parseNim%2CEnvVarValue"><span class="Identifier">parseNim</span></a><span class="Other">(</span><span class="Identifier">value</span><span class="Other">:</span> <a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">)</span><span class="Other">:</span> <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><a href="filetypes.html#FilePath"><span class="Identifier">FilePath</span></a><span class="Other">,</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ref</span> <a href="parseenv.html#ParseEnvError"><span class="Identifier">ParseEnvError</span></a><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">func</span> <a href="#parseNim%2CEnvVarValue"><span class="Identifier">parseNim</span></a><span class="Other">(</span><span class="Identifier">value</span><span class="Other">:</span> <a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">)</span><span class="Other">:</span> <a href="parseenv.html#ParseEnvResult"><span class="Identifier">ParseEnvResult</span></a><span class="Other">[</span><a href="filetypes.html#FilePath"><span class="Identifier">FilePath</span></a><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 Does currently nothing other than returning a success. 
@@ -221,8 +221,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 <a id="parseNimFlags,EnvVarValue"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#parseNimFlags%2CEnvVarValue"><span class="Identifier">parseNimFlags</span></a><span class="Other">(</span><span class="Identifier">value</span><span class="Other">:</span> <a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">)</span><span class="Other">:</span> <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span>
-    <span class="Keyword">proc</span> <span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ref</span> <a href="parseenv.html#ParseEnvError"><span class="Identifier">ParseEnvError</span></a><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">func</span> <a href="#parseNimFlags%2CEnvVarValue"><span class="Identifier">parseNimFlags</span></a><span class="Other">(</span><span class="Identifier">value</span><span class="Other">:</span> <a href="envtypes.html#EnvVarValue"><span class="Identifier">EnvVarValue</span></a><span class="Other">)</span><span class="Other">:</span> <a href="parseenv.html#ParseEnvResult"><span class="Identifier">ParseEnvResult</span></a><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 Does currently nothing other than returning a success. 
@@ -242,7 +242,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-28 14:57:53 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-31 16:52:10 UTC</small>
       </div>
     </div>
   </div>

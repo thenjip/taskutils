@@ -116,11 +116,11 @@ function main() {
           </ul></dd>
 <dt><a name="envNim" href="#envNim"><span>envNim:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="envvars: envNim(): string" href="taskutils/envvars.html#envNim">envvars: envNim(): string</a></li>
+          data-doc-search-tag="envvars: envNim(): EnvVarName" href="taskutils/envvars.html#envNim">envvars: envNim(): EnvVarName</a></li>
           </ul></dd>
 <dt><a name="envNimFlags" href="#envNimFlags"><span>envNimFlags:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="envvars: envNimFlags(): string" href="taskutils/envvars.html#envNimFlags">envvars: envNimFlags(): string</a></li>
+          data-doc-search-tag="envvars: envNimFlags(): EnvVarName" href="taskutils/envvars.html#envNimFlags">envvars: envNimFlags(): EnvVarName</a></li>
           </ul></dd>
 <dt><a name="EnvVarName" href="#EnvVarName"><span>EnvVarName:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -250,13 +250,25 @@ function main() {
           <li><a class="reference external"
           data-doc-search-tag="parseenv: parseEnvError(msg: string): ref ParseEnvError" href="taskutils/parseenv.html#parseEnvError%2Cstring">parseenv: parseEnvError(msg: string): ref ParseEnvError</a></li>
           </ul></dd>
+<dt><a name="parseEnvFailure" href="#parseEnvFailure"><span>parseEnvFailure:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="parseenv: parseEnvFailure(fail: () -&gt; ref ParseEnvError; T: typedesc): ParseEnvResult[T]" href="taskutils/parseenv.html#parseEnvFailure%2C%2Ctypedesc">parseenv: parseEnvFailure(fail: () -&gt; ref ParseEnvError; T: typedesc): ParseEnvResult[T]</a></li>
+          </ul></dd>
+<dt><a name="ParseEnvResult" href="#ParseEnvResult"><span>ParseEnvResult:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="parseenv: ParseEnvResult" href="taskutils/parseenv.html#ParseEnvResult">parseenv: ParseEnvResult</a></li>
+          </ul></dd>
+<dt><a name="parseEnvSuccess" href="#parseEnvSuccess"><span>parseEnvSuccess:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="parseenv: parseEnvSuccess[T](value: T): ParseEnvResult[T]" href="taskutils/parseenv.html#parseEnvSuccess%2CT">parseenv: parseEnvSuccess[T](value: T): ParseEnvResult[T]</a></li>
+          </ul></dd>
 <dt><a name="parseNim" href="#parseNim"><span>parseNim:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="envvars: parseNim(value: EnvVarValue): Result[FilePath, proc (): ref ParseEnvError]" href="taskutils/envvars.html#parseNim%2CEnvVarValue">envvars: parseNim(value: EnvVarValue): Result[FilePath, proc (): ref ParseEnvError]</a></li>
+          data-doc-search-tag="envvars: parseNim(value: EnvVarValue): ParseEnvResult[FilePath]" href="taskutils/envvars.html#parseNim%2CEnvVarValue">envvars: parseNim(value: EnvVarValue): ParseEnvResult[FilePath]</a></li>
           </ul></dd>
 <dt><a name="parseNimFlags" href="#parseNimFlags"><span>parseNimFlags:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="envvars: parseNimFlags(value: EnvVarValue): Result[string, proc (): ref ParseEnvError]" href="taskutils/envvars.html#parseNimFlags%2CEnvVarValue">envvars: parseNimFlags(value: EnvVarValue): Result[string, proc (): ref ParseEnvError]</a></li>
+          data-doc-search-tag="envvars: parseNimFlags(value: EnvVarValue): ParseEnvResult[string]" href="taskutils/envvars.html#parseNimFlags%2CEnvVarValue">envvars: parseNimFlags(value: EnvVarValue): ParseEnvResult[string]</a></li>
           </ul></dd>
 <dt><a name="RelativeDir" href="#RelativeDir"><span>RelativeDir:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -321,14 +333,14 @@ function main() {
 <dt><a name="tryParseNim" href="#tryParseNim"><span>tryParseNim:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="envvars: tryParseNim(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[
-    Result[FilePath, proc (): ref ParseEnvError]]" href="taskutils/envvars.html#tryParseNim">envvars: tryParseNim(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[
-    Result[FilePath, proc (): ref ParseEnvError]]</a></li>
+    ParseEnvResult[FilePath]]" href="taskutils/envvars.html#tryParseNim">envvars: tryParseNim(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[
+    ParseEnvResult[FilePath]]</a></li>
           </ul></dd>
 <dt><a name="tryParseNimFlags" href="#tryParseNimFlags"><span>tryParseNimFlags:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="envvars: tryParseNimFlags(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[
-    Result[string, proc (): ref ParseEnvError]]" href="taskutils/envvars.html#tryParseNimFlags">envvars: tryParseNimFlags(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[
-    Result[string, proc (): ref ParseEnvError]]</a></li>
+    ParseEnvResult[string]]" href="taskutils/envvars.html#tryParseNimFlags">envvars: tryParseNimFlags(tryRead: EnvVarName -&gt; Optional[EnvVarValue]): Optional[
+    ParseEnvResult[string]]</a></li>
           </ul></dd>
 <dt><a name="UnboxError" href="#UnboxError"><span>UnboxError:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -347,7 +359,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-28 14:57:53 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-31 16:52:10 UTC</small>
       </div>
     </div>
   </div>
