@@ -21,11 +21,11 @@ func longOption* (name: OptionName, value: OptionValue): string =
 
 
 
-func toNimLongOptions* (options: openArray[OptionName]): seq[string] =
+func toNimLongOptions* (options: varargs[OptionName]): seq[string] =
   options.map(name => name.longOption())
 
 
 func toNimLongOptions* (
-  options: openArray[tuple[name: OptionName, value: OptionValue]]
+  options: varargs[tuple[name: OptionName, value: OptionValue]]
 ): seq[string] =
   options.map(opt => opt.name.longOption(opt.value))
