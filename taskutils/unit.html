@@ -17,7 +17,7 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'/>
 
 <!-- CSS -->
-<title>taskutils/dirs</title>
+<title>taskutils/unit</title>
 <link rel="stylesheet" type="text/css" href="../nimdoc.out.css">
 
 <script type="text/javascript" src="../dochack.js"></script>
@@ -62,7 +62,7 @@ function main() {
 <body onload="main()">
 <div class="document" id="documentId">
   <div class="container">
-    <h1 class="title">taskutils/dirs</h1>
+    <h1 class="title">taskutils/unit</h1>
     <div class="row">
   <div class="three columns">
   <div class="theme-switch-wrapper">
@@ -92,27 +92,24 @@ function main() {
   </div>
   <ul class="simple simple-toc" id="toc-list">
 <li>
-  <a class="reference reference-toplevel" href="#6" id="56">Imports</a>
+  <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
-    
+      <li><a class="reference" href="#Unit"
+    title="Unit = tuple[]"><wbr />Unit<span class="attachedType"></span></a></li>
+
   </ul>
 </li>
 <li>
   <a class="reference reference-toplevel" href="#13" id="63">Funcs</a>
   <ul class="simple simple-toc-section">
-      <ul class="simple nested-toc-section">outputDir
-      <li><a class="reference" href="#outputDir%2Cstring%2CAbsoluteDir"
-    title="outputDir(taskName: string; baseOutputDir: AbsoluteDir): AbsoluteDir">outputDir,string,AbsoluteDir<span class="attachedType"></span></a></li>
+      <ul class="simple nested-toc-section">unit
+      <li><a class="reference" href="#unit_2"
+    title="unit(): Unit">unit_2<span class="attachedType">Unit</span></a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">nimbleCache
-      <li><a class="reference" href="#nimbleCache"
-    title="nimbleCache(): string">nimbleCache<span class="attachedType"></span></a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">compilerCache
-      <li><a class="reference" href="#compilerCache%2CAbsoluteDir"
-    title="compilerCache(baseOutputDir: AbsoluteDir): AbsoluteDir">compilerCache,AbsoluteDir<span class="attachedType"></span></a></li>
+  <ul class="simple nested-toc-section">ignore
+      <li><a class="reference" href="#ignore%2CT"
+    title="ignore[T](_: T)">ignore,T<span class="attachedType"></span></a></li>
 
   </ul>
 
@@ -126,47 +123,45 @@ function main() {
   <div id="tocRoot"></div>
   
   <p class="module-desc"></p>
-  <div class="section" id="6">
-<h1><a class="toc-backref" href="#6">Imports</a></h1>
+  <div class="section" id="7">
+<h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
-<a class="reference external" href="filetypes.html">filetypes</a>
+<a id="Unit"></a>
+<dt><pre><a href="unit.html#Unit"><span class="Identifier">Unit</span></a> <span class="Other">=</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+&nbsp;&nbsp;<a
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/unit.nim#L2"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/unit.nim#L2" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+
 </dl></div>
 <div class="section" id="13">
 <h1><a class="toc-backref" href="#13">Funcs</a></h1>
 <dl class="item">
-<a id="nimbleCache"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#nimbleCache"><span class="Identifier">nimbleCache</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="unit_2"></a>
+<dt><pre><span class="Keyword">func</span> <a href="#unit_2"><span class="Identifier">unit</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <a href="unit.html#Unit"><span class="Identifier">Unit</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/dirs.nim#L7"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/unit.nim#L6"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/dirs.nim#L7" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/unit.nim#L6" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<a id="compilerCache,AbsoluteDir"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#compilerCache%2CAbsoluteDir"><span class="Identifier">compilerCache</span></a><span class="Other">(</span><span class="Identifier">baseOutputDir</span><span class="Other">:</span> <a href="filetypes.html#AbsoluteDir"><span class="Identifier">AbsoluteDir</span></a><span class="Other">)</span><span class="Other">:</span> <a href="filetypes.html#AbsoluteDir"><span class="Identifier">AbsoluteDir</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-Returns a path to the directory for the compiler's cache. 
-&nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/dirs.nim#L12"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/dirs.nim#L12" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="outputDir,string,AbsoluteDir"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#outputDir%2Cstring%2CAbsoluteDir"><span class="Identifier">outputDir</span></a><span class="Other">(</span><span class="Identifier">taskName</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">baseOutputDir</span><span class="Other">:</span> <a href="filetypes.html#AbsoluteDir"><span class="Identifier">AbsoluteDir</span></a><span class="Other">)</span><span class="Other">:</span> <a href="filetypes.html#AbsoluteDir"><span class="Identifier">AbsoluteDir</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="ignore,T"></a>
+<dt><pre><span class="Keyword">func</span> <a href="#ignore%2CT"><span class="Identifier">ignore</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Operator">_</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/dirs.nim#L20"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/unit.nim#L10"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/dirs.nim#L20" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/unit.nim#L10" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 

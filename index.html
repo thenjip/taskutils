@@ -63,7 +63,7 @@ function main() {
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">Index</h1>
-    Modules: <a href="taskutils/dirs.html">taskutils/dirs</a>, <a href="taskutils/envtypes.html">taskutils/envtypes</a>, <a href="taskutils/envvars.html">taskutils/envvars</a>, <a href="taskutils/fileiters.html">taskutils/fileiters</a>, <a href="taskutils/files.html">taskutils/files</a>, <a href="taskutils/filetypes.html">taskutils/filetypes</a>, <a href="taskutils/nimcmdline.html">taskutils/nimcmdline</a>, <a href="taskutils/optional.html">taskutils/optional</a>, <a href="taskutils/parseenv.html">taskutils/parseenv</a>, <a href="taskutils/result.html">taskutils/result</a>.<br/><p /><h2>API symbols</h2>
+    Modules: <a href="taskutils/cmdline.html">taskutils/cmdline</a>, <a href="taskutils/dirs.html">taskutils/dirs</a>, <a href="taskutils/envtypes.html">taskutils/envtypes</a>, <a href="taskutils/envvars.html">taskutils/envvars</a>, <a href="taskutils/fileiters.html">taskutils/fileiters</a>, <a href="taskutils/files.html">taskutils/files</a>, <a href="taskutils/filetypes.html">taskutils/filetypes</a>, <a href="taskutils/nimcmdline.html">taskutils/nimcmdline</a>, <a href="taskutils/optional.html">taskutils/optional</a>, <a href="taskutils/parseenv.html">taskutils/parseenv</a>, <a href="taskutils/result.html">taskutils/result</a>, <a href="taskutils/unit.html">taskutils/unit</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="%60%3D%3D%60" href="#%60%3D%3D%60"><span>`==`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="result: `==`[S; F](self, other: Result[S, F]): bool" href="taskutils/result.html#%3D%3D%2CResult%5BS%2CF%5D%2CResult%5BS%2CF%5D">result: `==`[S; F](self, other: Result[S, F]): bool</a></li>
@@ -105,6 +105,10 @@ function main() {
           data-doc-search-tag="optional: boxedType[T; ](self: Optional[T]): typedesc[T]" href="taskutils/optional.html#boxedType.t%2COptional%5BT%5D">optional: boxedType[T; ](self: Optional[T]): typedesc[T]</a></li>
           <li><a class="reference external"
           data-doc-search-tag="optional: boxedType[T; ](X: typedesc[Optional[T]]): typedesc[T]" href="taskutils/optional.html#boxedType.t%2Ctypedesc%5BOptional%5BT%5D%5D">optional: boxedType[T; ](X: typedesc[Optional[T]]): typedesc[T]</a></li>
+          </ul></dd>
+<dt><a name="cmdLine" href="#cmdLine"><span>cmdLine:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cmdline: cmdLine(parts: varargs[string]): string" href="taskutils/cmdline.html#cmdLine%2Cvarargs%5Bstring%5D">cmdline: cmdLine(parts: varargs[string]): string</a></li>
           </ul></dd>
 <dt><a name="compilerCache" href="#compilerCache"><span>compilerCache:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -189,6 +193,10 @@ function main() {
 <dt><a name="ifSuccess" href="#ifSuccess"><span>ifSuccess:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="result: ifSuccess[S; F; T](self: Result[S, F]; then: S -&gt; T; else: F -&gt; T): T" href="taskutils/result.html#ifSuccess%2CResult%5BS%2CF%5D%2C%2C">result: ifSuccess[S; F; T](self: Result[S, F]; then: S -&gt; T; else: F -&gt; T): T</a></li>
+          </ul></dd>
+<dt><a name="ignore" href="#ignore"><span>ignore:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="unit: ignore[T](_: T)" href="taskutils/unit.html#ignore%2CT">unit: ignore[T](_: T)</a></li>
           </ul></dd>
 <dt><a name="isFailure" href="#isFailure"><span>isFailure:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -354,12 +362,20 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="result: unboxSuccess[S; F](self: Result[S, F]): S" href="taskutils/result.html#unboxSuccess%2CResult%5BS%2CF%5D">result: unboxSuccess[S; F](self: Result[S, F]): S</a></li>
           </ul></dd>
+<dt><a name="Unit" href="#Unit"><span>Unit:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="unit: Unit" href="taskutils/unit.html#Unit">unit: Unit</a></li>
+          </ul></dd>
+<dt><a name="unit" href="#unit"><span>unit:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="unit: unit(): Unit" href="taskutils/unit.html#unit_2">unit: unit(): Unit</a></li>
+          </ul></dd>
 </dl>
     <div class="row">
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-31 17:32:20 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-31 17:38:10 UTC</small>
       </div>
     </div>
   </div>
