@@ -105,11 +105,11 @@ function main() {
   <a class="reference reference-toplevel" href="#13" id="63">Funcs</a>
   <ul class="simple simple-toc-section">
       <ul class="simple nested-toc-section">toNimLongOptions
-      <li><a class="reference" href="#toNimLongOptions%2CopenArray%5BOptionName%5D"
-    title="toNimLongOptions(options: openArray[OptionName]): seq[string]">toNimLongOptions,openArray[OptionName]<span class="attachedType">OptionName</span></a></li>
-  <li><a class="reference" href="#toNimLongOptions%2CopenArray%5Btuple%5BOptionName%2COptionValue%5D%5D"
-    title="toNimLongOptions(options: openArray[tuple[name: OptionName, value: OptionValue]]): seq[
-    string]">toNimLongOptions,openArray[tuple[OptionName,OptionValue]]<span class="attachedType">OptionName</span></a></li>
+      <li><a class="reference" href="#toNimLongOptions%2Cvarargs%5BOptionName%5D"
+    title="toNimLongOptions(options: varargs[OptionName]): seq[string]">toNimLongOptions,varargs[OptionName]<span class="attachedType">OptionName</span></a></li>
+  <li><a class="reference" href="#toNimLongOptions%2Cvarargs%5Btuple%5BOptionName%2COptionValue%5D%5D"
+    title="toNimLongOptions(options: varargs[tuple[name: OptionName, value: OptionValue]]): seq[
+    string]">toNimLongOptions,varargs[tuple[OptionName,OptionValue]]<span class="attachedType">OptionName</span></a></li>
 
   </ul>
   <ul class="simple nested-toc-section">longOptionPrefix
@@ -199,8 +199,8 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/nimcmdline.nim#L19" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<a id="toNimLongOptions,openArray[OptionName]"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#toNimLongOptions%2CopenArray%5BOptionName%5D"><span class="Identifier">toNimLongOptions</span></a><span class="Other">(</span><span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><a href="nimcmdline.html#OptionName"><span class="Identifier">OptionName</span></a><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+<a id="toNimLongOptions,varargs[OptionName]"></a>
+<dt><pre><span class="Keyword">func</span> <a href="#toNimLongOptions%2Cvarargs%5BOptionName%5D"><span class="Identifier">toNimLongOptions</span></a><span class="Other">(</span><span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><a href="nimcmdline.html#OptionName"><span class="Identifier">OptionName</span></a><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -211,10 +211,9 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/nimcmdline.nim#L24" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<a id="toNimLongOptions,openArray[tuple[OptionName,OptionValue]]"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#toNimLongOptions%2CopenArray%5Btuple%5BOptionName%2COptionValue%5D%5D"><span class="Identifier">toNimLongOptions</span></a><span class="Other">(</span><span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span>
-    <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">name</span><span class="Other">:</span> <a href="nimcmdline.html#OptionName"><span class="Identifier">OptionName</span></a><span class="Other">,</span> <span class="Identifier">value</span><span class="Other">:</span> <a href="nimcmdline.html#OptionValue"><span class="Identifier">OptionValue</span></a><span class="Other">]</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="toNimLongOptions,varargs[tuple[OptionName,OptionValue]]"></a>
+<dt><pre><span class="Keyword">func</span> <a href="#toNimLongOptions%2Cvarargs%5Btuple%5BOptionName%2COptionValue%5D%5D"><span class="Identifier">toNimLongOptions</span></a><span class="Other">(</span><span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">name</span><span class="Other">:</span> <a href="nimcmdline.html#OptionName"><span class="Identifier">OptionName</span></a><span class="Other">,</span>
+    <span class="Identifier">value</span><span class="Other">:</span> <a href="nimcmdline.html#OptionValue"><span class="Identifier">OptionValue</span></a><span class="Other">]</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -234,7 +233,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-31 16:52:10 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-10-31 17:02:43 UTC</small>
       </div>
     </div>
   </div>
