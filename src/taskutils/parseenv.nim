@@ -11,12 +11,24 @@ type
 
 
 
-proc parseEnvError* (msg: string): ref ParseEnvError =
+func parseEnvError* (msg: string): ref ParseEnvError =
   ParseEnvError.newException(msg)
 
 
-proc parseEnvError* (name: EnvVarName; reason: string): ref ParseEnvError =
+func parseEnvError* (name: EnvVarName; reason: string): ref ParseEnvError =
   fmt"{name}: {reason}".parseEnvError()
+
+
+
+func parseEnvSuccess* [T](value: T): ParseEnvResult[T] =
+  value.success(result.failureType())
+
+
+func parseEnvFailure* (
+  fail: () -> ref ParseEnvError;
+  T: typedesc
+): ParseEnvResult[T] =
+  fail.failure(T)
 
 
 
