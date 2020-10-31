@@ -16,7 +16,7 @@ proc testTryParseNim () =
   proc testValid (value: EnvVarValue) =
     let
       env = {envNim(): value}.toTable()
-      expected = value.success(() -> ref ParseEnvError)
+      expected = value.parseEnvSuccess()
       actual = tryParseNim(key => env.findValue(key)).get()
 
     doAssert(actual == expected)
@@ -24,7 +24,7 @@ proc testTryParseNim () =
   proc testNotFound () =
     let
       env = {"ABC": "abc"}.toTable()
-      expected = Result[FilePath, () -> ref ParseEnvError].none()
+      expected = ParseEnvResult[FilePath].none()
       actual = tryParseNim(key => env.findValue(key))
 
     doAssert(actual == expected)
@@ -38,7 +38,7 @@ proc testTryParseNimFlags () =
   proc testValid (value: EnvVarValue) =
     let
       env = {envNimFlags(): value}.toTable()
-      expected = value.success(() -> ref ParseEnvError)
+      expected = value.parseEnvSuccess()
       actual = tryParseNimFlags(key => env.findValue(key)).get()
 
     doAssert(actual == expected)
@@ -46,7 +46,7 @@ proc testTryParseNimFlags () =
   proc testNotFound () =
     let
       env = {"ABC": "abc"}.toTable()
-      expected = Result[string, () -> ref ParseEnvError].none()
+      expected = ParseEnvResult[string].none()
       actual = tryParseNimFlags(key => env.findValue(key))
 
     doAssert(actual == expected)

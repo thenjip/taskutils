@@ -23,7 +23,7 @@ func parseNim* (value: EnvVarValue): ParseEnvResult[FilePath] =
   ##[
     Does currently nothing other than returning a success.
   ]##
-  value.success(result.failureType())
+  value.parseEnvSuccess()
 
 
 proc tryParseNim* (
@@ -37,7 +37,7 @@ func parseNimFlags* (value: EnvVarValue): ParseEnvResult[string] =
   ##[
     Does currently nothing other than returning a success.
   ]##
-  value.success(result.failureType())
+  value.parseEnvSuccess()
 
 
 proc tryParseNimFlags* (
