@@ -1,4 +1,5 @@
 import taskutils/[
+  cmdline,
   dirs,
   envtypes,
   envvars,
@@ -8,12 +9,14 @@ import taskutils/[
   nimcmdline,
   optional,
   parseenv,
-  result
+  result,
+  unit
 ]
 
 
 
 export
+  cmdline,
   dirs,
   envtypes,
   envvars,
@@ -23,4 +26,5 @@ export
   nimcmdline,
   optional,
   parseenv,
-  result
+  result,
+  unit
