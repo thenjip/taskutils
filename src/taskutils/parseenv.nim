@@ -7,6 +7,8 @@ import std/[strformat, sugar]
 type
   ParseEnvError* = object of CatchableError
 
+  ParseEnvResult* [T] = Result[T, () -> ref ParseEnvError]
+
 
 
 proc parseEnvError* (msg: string): ref ParseEnvError =
