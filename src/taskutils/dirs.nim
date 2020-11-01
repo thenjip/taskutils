@@ -9,11 +9,21 @@ func nimbleCache* (): string =
 
 
 
-func compilerCache* (baseOutputDir: AbsoluteDir): AbsoluteDir =
+func crossCompilerCache* (baseOutputDir: AbsoluteDir): AbsoluteDir =
   ##[
-    Returns a path to the directory for the compiler's cache.
+    Returns a direcotry path to a cache suitable for cross compilation.
+
+    Since 0.2.0.
   ]##
   baseOutputDir / hostOS / hostCPU
+
+
+func compilerCache* (baseOutputDir: AbsoluteDir): AbsoluteDir {.deprecated.} =
+  ##[
+    Deprecated since 0.2.0.
+    Use `crossCompilerCache` instead.
+  ]##
+  baseOutputDir.crossCompilerCache()
 
 
 
