@@ -106,6 +106,18 @@ func unboxSuccess* [S; F](self: Result[S, F]): S {.
   self.ifSuccess(s => s, proc (_: F): S = raise UnboxError.newException(""))
 
 
+func unboxSuccessOrRaise* [S; E: CatchableError](self: Result[S, ref E]): S {.
+  raises: [Exception, E]
+.} =
+  self.ifSuccess(s => s, proc (error: ref E): S = raise error)
+
+
+func unboxSuccessOrRaise* [S; E: CatchableError](
+  self: Result[S, () -> ref E]
+): S {.raises: [Exception, E].} =
+  self.ifSuccess(s => s, proc (error: () -> ref E): S = raise error())
+
+
 func unboxFailure* [S; F](self: Result[S, F]): F {.
   raises: [Exception, UnboxError]
 .} =

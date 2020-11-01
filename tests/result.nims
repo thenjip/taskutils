@@ -51,19 +51,48 @@ proc testMonadAssociativity () =
 
 
 proc testUnboxSuccess () =
-  proc test () =
-    doAssertRaises(UnboxError):
-      discard "abc".failure(int).unboxSuccess()
+  proc testSuccess [S](expected: S; F: typedesc) =
+    let actual = expected.success(F).unboxSuccess()
 
-  test()
+    doAssert(actual == expected)
+
+  proc testFailure [F](error: F; S: typedesc) =
+    doAssertRaises UnboxError:
+      discard error.failure(S).unboxSuccess()
+
+  testSuccess(1, ref byte)
+  testFailure("abc", int)
+  testFailure(IOError.newException("abc"), char)
+
+
+proc testUnboxSuccessOrRaise () =
+  proc testSuccess [S](expected: S; E: typedesc[CatchableError]) =
+    let actual = expected.success(ref E).unboxSuccessOrRaise()
+
+    doAssert(actual == expected)
+
+  proc testFailure [E: CatchableError](error: ref E; S: typedesc) =
+    doAssertRaises error.typeof():
+      discard error.failure(S).unboxSuccessOrRaise()
+
+  testSuccess(-5i16, LibraryError)
+  testFailure(IOError.newException("abc"), char)
+  testFailure(ResourceExhaustedError.newException("abc"), Natural)
 
 
 proc testUnboxFailure () =
-  proc test () =
-    doAssertRaises(UnboxError):
-      discard "abc".success(int).unboxFailure()
+  proc testSuccess [S](value: S; F: typedesc) =
+    doAssertRaises UnboxError:
+      discard value.success(F).unboxFailure()
 
-  test()
+  proc testFailure [F](expected: F; S: typedesc) =
+    let actual = expected.failure(S).unboxFailure()
+
+    doAssert(actual == expected)
+
+  testSuccess(1, ref byte)
+  testFailure("abc", int)
+  testFailure(IOError.newException("abc"), char)
 
 
 
@@ -73,6 +102,7 @@ proc main () =
     testMonadRightIdentity,
     testMonadAssociativity,
     testUnboxSuccess,
+    testUnboxSuccessOrRaise,
     testUnboxFailure
   ]:
     test()
