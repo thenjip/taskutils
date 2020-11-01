@@ -349,7 +349,7 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 <a id="unboxSuccess,Result[S,F]"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#unboxSuccess%2CResult%5BS%2CF%5D"><span class="Identifier">unboxSuccess</span></a><span class="Other">[</span><span class="Identifier">S</span><span class="Other">;</span> <span class="Identifier">F</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><span class="Identifier">S</span><span class="Other">,</span> <span class="Identifier">F</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">S</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <a href="result.html#UnboxError"><span class="Identifier">UnboxError</span></a><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">func</span> <a href="#unboxSuccess%2CResult%5BS%2CF%5D"><span class="Identifier">unboxSuccess</span></a><span class="Other">[</span><span class="Identifier">S</span><span class="Other">;</span> <span class="Identifier">F</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><span class="Identifier">S</span><span class="Other">,</span> <span class="Identifier">F</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">S</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><a href="result.html#UnboxError"><span class="Identifier">UnboxError</span></a><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -361,37 +361,37 @@ class="link-seesrc" target="_blank">Source</a>
 </dd>
 <a id="unboxSuccessOrRaise,Result[S,ref.E]"></a>
 <dt><pre><span class="Keyword">func</span> <a href="#unboxSuccessOrRaise%2CResult%5BS%2Cref.E%5D"><span class="Identifier">unboxSuccessOrRaise</span></a><span class="Other">[</span><span class="Identifier">S</span><span class="Other">;</span> <span class="Identifier">E</span><span class="Other">:</span> <span class="Identifier">CatchableError</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><span class="Identifier">S</span><span class="Other">,</span> <span class="Keyword">ref</span> <span class="Identifier">E</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">S</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">E</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">E</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/result.nim#L109"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/result.nim#L107"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/result.nim#L109" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/result.nim#L107" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="unboxSuccessOrRaise,Result[S,proc)]"></a>
 <dt><pre><span class="Keyword">func</span> <a href="#unboxSuccessOrRaise%2CResult%5BS%2Cproc%29%5D"><span class="Identifier">unboxSuccessOrRaise</span></a><span class="Other">[</span><span class="Identifier">S</span><span class="Other">;</span> <span class="Identifier">E</span><span class="Other">:</span> <span class="Identifier">CatchableError</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><span class="Identifier">S</span><span class="Other">,</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Identifier">E</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">S</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">E</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">E</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/result.nim#L115"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/result.nim#L113"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/result.nim#L115" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/result.nim#L113" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="unboxFailure,Result[S,F]"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#unboxFailure%2CResult%5BS%2CF%5D"><span class="Identifier">unboxFailure</span></a><span class="Other">[</span><span class="Identifier">S</span><span class="Other">;</span> <span class="Identifier">F</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><span class="Identifier">S</span><span class="Other">,</span> <span class="Identifier">F</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">F</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <a href="result.html#UnboxError"><span class="Identifier">UnboxError</span></a><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">func</span> <a href="#unboxFailure%2CResult%5BS%2CF%5D"><span class="Identifier">unboxFailure</span></a><span class="Other">[</span><span class="Identifier">S</span><span class="Other">;</span> <span class="Identifier">F</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <a href="result.html#Result"><span class="Identifier">Result</span></a><span class="Other">[</span><span class="Identifier">S</span><span class="Other">,</span> <span class="Identifier">F</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">F</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><a href="result.html#UnboxError"><span class="Identifier">UnboxError</span></a><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/result.nim#L121"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/result.nim#L119"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/result.nim#L121" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/result.nim#L119" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -453,7 +453,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-11-01 14:29:28 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-11-01 14:37:29 UTC</small>
       </div>
     </div>
   </div>
