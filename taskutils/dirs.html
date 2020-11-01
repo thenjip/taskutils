@@ -100,7 +100,12 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#13" id="63">Funcs</a>
   <ul class="simple simple-toc-section">
-      <ul class="simple nested-toc-section">outputIn
+      <ul class="simple nested-toc-section">crossCompilerCache
+      <li><a class="reference" href="#crossCompilerCache%2CAbsoluteDir"
+    title="crossCompilerCache(baseOutputDir: AbsoluteDir): AbsoluteDir">crossCompilerCache,AbsoluteDir<span class="attachedType"></span></a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">outputIn
       <li><a class="reference" href="#outputIn%2Cstring%2CAbsoluteDir"
     title="outputIn(taskName: string; baseOutputDir: AbsoluteDir): AbsoluteDir">outputIn,string,AbsoluteDir<span class="attachedType"></span></a></li>
 
@@ -150,16 +155,33 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/dirs.nim#L7" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<a id="compilerCache,AbsoluteDir"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#compilerCache%2CAbsoluteDir"><span class="Identifier">compilerCache</span></a><span class="Other">(</span><span class="Identifier">baseOutputDir</span><span class="Other">:</span> <a href="filetypes.html#AbsoluteDir"><span class="Identifier">AbsoluteDir</span></a><span class="Other">)</span><span class="Other">:</span> <a href="filetypes.html#AbsoluteDir"><span class="Identifier">AbsoluteDir</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+<a id="crossCompilerCache,AbsoluteDir"></a>
+<dt><pre><span class="Keyword">func</span> <a href="#crossCompilerCache%2CAbsoluteDir"><span class="Identifier">crossCompilerCache</span></a><span class="Other">(</span><span class="Identifier">baseOutputDir</span><span class="Other">:</span> <a href="filetypes.html#AbsoluteDir"><span class="Identifier">AbsoluteDir</span></a><span class="Other">)</span><span class="Other">:</span> <a href="filetypes.html#AbsoluteDir"><span class="Identifier">AbsoluteDir</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-Returns a path to the directory for the compiler's cache. 
+<p>Returns a direcotry path to a cache suitable for cross compilation.</p>
+<p>Since 0.2.0. </p>
+
 &nbsp;&nbsp;<a
 href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/dirs.nim#L12"
 class="link-seesrc" target="_blank">Source</a>
 <a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/dirs.nim#L12" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="compilerCache,AbsoluteDir"></a>
+<dt><pre><span class="Keyword">func</span> <a href="#compilerCache%2CAbsoluteDir"><span class="Identifier">compilerCache</span></a><span class="Other">(</span><span class="Identifier">baseOutputDir</span><span class="Other">:</span> <a href="filetypes.html#AbsoluteDir"><span class="Identifier">AbsoluteDir</span></a><span class="Other">)</span><span class="Other">:</span> <a href="filetypes.html#AbsoluteDir"><span class="Identifier">AbsoluteDir</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">deprecated</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+  <div class="deprecation-message">
+    <b>Deprecated</b> 
+  </div>
+
+Deprecated since 0.2.0. Use <tt class="docutils literal"><span class="pre">crossCompilerCache</span></tt> instead. 
+&nbsp;&nbsp;<a
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/dirs.nim#L21"
+class="link-seesrc" target="_blank">Source</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/dirs.nim#L21" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="outputIn,string,AbsoluteDir"></a>
@@ -169,9 +191,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 Since 0.2.0. 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/dirs.nim#L20"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/dirs.nim#L30"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/dirs.nim#L20" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/dirs.nim#L30" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="outputDir,string,AbsoluteDir"></a>
@@ -184,9 +206,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 Deprecated since 0.2.0. Use <tt class="docutils literal"><span class="pre">outputIn</span></tt> instead. 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/dirs.nim#L27"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/dirs.nim#L37"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/dirs.nim#L27" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/dirs.nim#L37" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -199,7 +221,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-11-01 13:11:47 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-11-01 13:18:00 UTC</small>
       </div>
     </div>
   </div>
