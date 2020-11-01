@@ -17,5 +17,18 @@ func compilerCache* (baseOutputDir: AbsoluteDir): AbsoluteDir =
 
 
 
-func outputDir* (taskName: string; baseOutputDir: AbsoluteDir): AbsoluteDir =
+func outputIn* (taskName: string; baseOutputDir: AbsoluteDir): AbsoluteDir =
+  ##[
+    Since 0.2.0.
+  ]##
   baseOutputDir / taskName
+
+
+func outputDir* (taskName: string; baseOutputDir: AbsoluteDir): AbsoluteDir {.
+  deprecated
+.} =
+  ##[
+    Deprecated since 0.2.0.
+    Use `outputIn` instead.
+  ]##
+  taskName.outputIn(baseOutputDir)
