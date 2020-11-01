@@ -18,6 +18,10 @@ import std/[macros, os, sequtils, strformat, strutils, sugar]
 
 
 
+func nimbleProjectName (): string =
+  "taskutils"
+
+
 func nimbleCache (): string =
   ".nimblecache"
 
@@ -77,10 +81,8 @@ define(
     func testsDir (): string =
       "tests"
 
-
     func runTestCmd (test: string): string =
       ["e", test].join($' ')
-
 
     withDir testsDir():
       for kind, path in getCurrentDir().walkDir():
@@ -92,38 +94,34 @@ define(
 )
 
 
-
 define(
   Task.Docs,
   proc (task: Task) =
     func outputDir (): string =
       nimbleCacheDir() / task.name()
 
-
     func genDocCmd (): string =
       const
         repoUrl = "https://github.com/thenjip/taskutils"
         mainGitBranch = "main"
-        mainModule = libSrcDir() / fmt"taskutils{ExtSep}nim"
+        mainModule = libSrcDir() / nimbleProjectName().addFileExt("nim")
 
       @["doc"]
         .concat(
           [
             "project",
             fmt"outdir:{outputDir().quoteShell()}",
-            fmt"git.url:{repoUrl}",
+            fmt"git.url:{repoUrl.quoteShell()}",
             fmt"git.devel:{mainGitBranch}",
             fmt"git.commit:{mainGitBranch}"
           ].map(opt => fmt"--{opt}"),
           @[mainModule.quoteShell()]
         ).join($' ')
 
-
     genDocCmd().selfExec()
     withDir outputDir():
-      fmt"theindex{ExtSep}html".cpFile(fmt"index{ExtSep}html")
+      "theindex".addFileExt("html").cpFile("index".addFileExt("html"))
 )
-
 
 
 define(
@@ -131,7 +129,6 @@ define(
   proc (_: Task) =
     proc tryRmDir (dir: string) =
       dir.rmDir()
-
 
     nimbleCacheDir().tryRmDir()
 )
