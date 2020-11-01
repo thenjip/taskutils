@@ -23,7 +23,4 @@ proc findExec* (exe: FilePath): Optional[FilePath] =
     It is the same as `os.findExe<https://nim-lang.org/docs/os.html#findExe%2Cstring%2Cbool%2CopenArray%5Bstring%5D>`_,
     but it returns an `Optional`.
   ]##
-  if exe.exeExists():
-    exe.some()
-  else:
-    result.boxedType().none()
+  exe.some().filter(exeExists)
