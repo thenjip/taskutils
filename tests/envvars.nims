@@ -5,10 +5,7 @@ import std/[os, strutils, sugar, tables]
 
 
 func findValue [K; V](self: Table[K, V]; key: K): Optional[V] =
-  if key in self:
-    self[key].some()
-  else:
-    V.none()
+  key.some().filter(k => k in self).map(k => self[k])
 
 
 
