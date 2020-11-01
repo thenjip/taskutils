@@ -3,7 +3,7 @@ func libSrcDir (): string =
 
 
 
-version = "0.1.0"
+version = "0.2.0"
 author = "thenjip"
 description = "Various utilities for tasks in NimScript."
 license = "MIT"
