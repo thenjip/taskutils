@@ -37,10 +37,7 @@ proc findValue* (
   exists: EnvVarName -> bool;
   read: EnvVarName -> EnvVarValue
 ): Optional[EnvVarValue] =
-  if name.exists():
-    name.read().some()
-  else:
-    result.boxedType().none()
+  name.some().filter(exists).map(read)
 
 
 proc tryParse* [T; E](
