@@ -28,7 +28,7 @@ nimble install 'https://github.com/thenjip/taskutils'
 ```nim
 # NimScript
 
-requires "https://github.com/thenjip/taskutils >= 0.1.0"
+requires "https://github.com/thenjip/taskutils >= 0.2.0"
 
 import pkg/taskutils/[cmdline, fileiters]
 import std/[os]
@@ -46,7 +46,7 @@ for test in "tests".absoluteNimModules():
 ```nim
 # NimScript
 
-requires "https://github.com/thenjip/taskutils >= 0.1.0"
+requires "https://github.com/thenjip/taskutils >= 0.2.0"
 
 import pkg/taskutils/[optional]
 import std/[sugar]
@@ -65,7 +65,7 @@ It is mainly used to make dealing with errors part of the API.
 ```nim
 # NimScript
 
-requires "https://github.com/thenjip/taskutils >= 0.1.0"
+requires "https://github.com/thenjip/taskutils >= 0.2.0"
 
 import pkg/taskutils/[cmdline, result, unit]
 import std/[strformat, strutils, sugar]
@@ -121,7 +121,7 @@ proc pipe (self: ShellCmdResult; cmd: string): ShellCmdResult =
 ```nim
 # NimScript
 
-requires "https://github.com/thenjip/taskutils >= 0.1.0"
+requires "https://github.com/thenjip/taskutils >= 0.2.0"
 
 import pkg/taskutils/[envtypes, optional, parseenv, result, unit]
 import std/[strformat, strutils, sugar]
