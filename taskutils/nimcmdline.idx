@@ -1,7 +1,10 @@
 OptionName	taskutils/nimcmdline.html#OptionName	nimcmdline: OptionName	
 OptionValue	taskutils/nimcmdline.html#OptionValue	nimcmdline: OptionValue	
+nimLongOptionPrefix	taskutils/nimcmdline.html#nimLongOptionPrefix	nimcmdline: nimLongOptionPrefix(): string	
 longOptionPrefix	taskutils/nimcmdline.html#longOptionPrefix	nimcmdline: longOptionPrefix(): string	
+nimLongOption	taskutils/nimcmdline.html#nimLongOption,OptionName	nimcmdline: nimLongOption(name: OptionName): string	
 longOption	taskutils/nimcmdline.html#longOption,OptionName	nimcmdline: longOption(name: OptionName): string	
+nimLongOption	taskutils/nimcmdline.html#nimLongOption,OptionName,OptionValue	nimcmdline: nimLongOption(name: OptionName; value: OptionValue): string	
 longOption	taskutils/nimcmdline.html#longOption,OptionName,OptionValue	nimcmdline: longOption(name: OptionName; value: OptionValue): string	
 toNimLongOptions	taskutils/nimcmdline.html#toNimLongOptions,varargs[OptionName]	nimcmdline: toNimLongOptions(options: varargs[OptionName]): seq[string]	
 toNimLongOptions	taskutils/nimcmdline.html#toNimLongOptions,varargs[tuple[OptionName,OptionValue]]	nimcmdline: toNimLongOptions(options: varargs[tuple[name: OptionName, value: OptionValue]]): seq[\n    string]	
