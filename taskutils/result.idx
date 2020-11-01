@@ -14,4 +14,6 @@ ifFailure	taskutils/result.html#ifFailure,Result[S,F],,	result: ifFailure[S; F; 
 flatMap	taskutils/result.html#flatMap,Result[A,F],	result: flatMap[A; B; F](self: Result[A, F]; f: A -&gt; Result[B, F]): Result[B, F]	
 map	taskutils/result.html#map,Result[A,F],	result: map[A; B; F](self: Result[A, F]; f: A -&gt; B): Result[B, F]	
 unboxSuccess	taskutils/result.html#unboxSuccess,Result[S,F]	result: unboxSuccess[S; F](self: Result[S, F]): S	
+unboxSuccessOrRaise	taskutils/result.html#unboxSuccessOrRaise,Result[S,ref.E]	result: unboxSuccessOrRaise[S; E: CatchableError](self: Result[S, ref E]): S	
+unboxSuccessOrRaise	taskutils/result.html#unboxSuccessOrRaise,Result[S,proc)]	result: unboxSuccessOrRaise[S; E: CatchableError](self: Result[S, proc (): ref E]): S	
 unboxFailure	taskutils/result.html#unboxFailure,Result[S,F]	result: unboxFailure[S; F](self: Result[S, F]): F	
