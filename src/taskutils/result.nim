@@ -100,12 +100,14 @@ proc map* [A; B; F](self: Result[A, F]; f: A -> B): Result[B, F] =
 
 
 
-func unboxSuccess* [S; F](self: Result[S, F]): S {.raises: [UnboxError].} =
+func unboxSuccess* [S; F](self: Result[S, F]): S {.
+  raises: [Exception, UnboxError]
+.} =
   self.ifSuccess(s => s, proc (_: F): S = raise UnboxError.newException(""))
 
 
 func unboxSuccessOrRaise* [S; E: CatchableError](self: Result[S, ref E]): S {.
-  raises: [E]
+  raises: [Exception, E]
 .} =
   ##[
     Since 0.2.0.
@@ -115,12 +117,14 @@ func unboxSuccessOrRaise* [S; E: CatchableError](self: Result[S, ref E]): S {.
 
 func unboxSuccessOrRaise* [S; E: CatchableError](
   self: Result[S, () -> ref E]
-): S {.raises: [E].} =
+): S {.raises: [Exception, E].} =
   ##[
     Since 0.2.0.
   ]##
   self.ifSuccess(s => s, proc (error: () -> ref E): S = raise error())
 
 
-func unboxFailure* [S; F](self: Result[S, F]): F {.raises: [UnboxError].} =
+func unboxFailure* [S; F](self: Result[S, F]): F {.
+  raises: [Exception, UnboxError]
+.} =
   self.ifFailure(f => f, proc (_: S): F = raise UnboxError.newException(""))
