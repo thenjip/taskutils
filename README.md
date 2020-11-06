@@ -7,6 +7,26 @@ Various utilities for tasks in [NimScript](https://nim-lang.org/docs/nims.html).
 
 The library itself is written in Nim, so it can be used in regular Nim code.
 
+## Rationale
+
+The main motivation is to see whether it is possible to import external
+packages in Nimble scripts.
+
+It is technically possible, but the external packages must be installed manually
+before running the Nimble script. Indeed, the script has to be verified by the
+compiler first, the `requires` statements only occur after, at runtime.
+
+This becomes quite inconvenient when installing the package associated with the
+script.
+
+The experimented solution with this project is to:
+
+- Move the code that depends on external packages out in regular NimScript
+  files.
+- Write Nimble tasks that execute the corresponding scripts.
+
+This project plays the role of an imported external package.
+
 ## Installation
 
 ```sh
@@ -28,8 +48,6 @@ nimble install 'https://github.com/thenjip/taskutils'
 ```nim
 # NimScript
 
-requires "https://github.com/thenjip/taskutils >= 0.2.1"
-
 import pkg/taskutils/[cmdline, fileiters]
 import std/[os]
 
@@ -45,8 +63,6 @@ for test in "tests".absoluteNimModules():
 
 ```nim
 # NimScript
-
-requires "https://github.com/thenjip/taskutils >= 0.2.1"
 
 import pkg/taskutils/[optional]
 import std/[sugar]
@@ -64,8 +80,6 @@ It is mainly used to make dealing with errors part of the API.
 
 ```nim
 # NimScript
-
-requires "https://github.com/thenjip/taskutils >= 0.2.1"
 
 import pkg/taskutils/[cmdline, result, unit]
 import std/[strformat, strutils, sugar]
@@ -120,8 +134,6 @@ proc pipe (self: ShellCmdResult; cmd: string): ShellCmdResult =
 
 ```nim
 # NimScript
-
-requires "https://github.com/thenjip/taskutils >= 0.2.1"
 
 import pkg/taskutils/[envtypes, optional, parseenv, result, unit]
 import std/[strformat, strutils, sugar]
