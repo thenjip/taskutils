@@ -11,14 +11,15 @@ func genDocCmdOptions (): seq[string] =
     repoUrl = "https://github.com/foo/foo"
     mainGitBranch = "main"
 
-  concat(
-    @["project".nimLongOption()],
-    {
-      "git.url": repoUrl,
-      "git.devel": mainGitBranch,
-      "git.commit": mainGitBranch
-    }.toNimLongOptions()
-  )
+  @["project".nimLongOption()]
+    .concat(
+      {
+        "git.url": repoUrl,
+        "git.devel": mainGitBranch,
+        "git.commit": mainGitBranch
+      }.toNimLongOptions()
+    )
+
 
 
 func genDocCmd (): string =
