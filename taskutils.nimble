@@ -55,8 +55,8 @@ func projectDir (self: Example): string =
 
 func cmdList (self: Example): seq[string] =
   const
-    docsTask = [selfExe(), "docs"].join($' ')
-    testTask = [selfExe(), "test"].join($' ')
+    docsTask = ["nimble", "docs"].join($' ')
+    testTask = ["nimble", "test"].join($' ')
 
     cmdLists: array[Example, seq[string]] = [
       @[docsTask],
