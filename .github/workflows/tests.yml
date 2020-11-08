@@ -24,7 +24,7 @@ jobs:
       - name: 'Checkout'
         uses: 'actions/checkout@v2'
 
-      - name: 'Setup the project'
+      - name: 'Install the dependencies'
         run: nimble install -dy
 
       - name: 'Run the tests'
@@ -45,8 +45,11 @@ jobs:
       - name: 'Checkout'
         uses: 'actions/checkout@v2'
 
-      - name: 'Setup the project'
+      - name: 'Install the dependencies'
         run: nimble install -dy
+
+      - name: 'Install the project itself'
+        run: nimble install -y
 
       - name: 'Run the examples'' tasks'
         run: nimble test_examples
