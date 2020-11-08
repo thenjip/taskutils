@@ -49,7 +49,7 @@ func identifier (self: Task): NimNode =
 func docsTaskDescription (): string =
   [
     "Generate the API documentation.",
-    "OUTDIR can be set in the environment to override the output directory."
+    "OUTDIR can be set in the environment to configure the output directory."
   ].join($' ')
 
 
