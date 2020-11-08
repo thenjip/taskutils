@@ -1,4 +1,4 @@
-import "common.nims"
+import common/[project]
 
 import pkg/taskutils/[cmdline, fileiters, nimcmdline]
 

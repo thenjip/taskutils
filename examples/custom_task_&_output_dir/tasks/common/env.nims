@@ -1,17 +1,6 @@
-import "../foo.nimble"
-
 import pkg/taskutils/[envtypes, optional, parseenv]
 
 import std/[sugar]
-
-
-
-export foo
-
-
-
-func nimbleProjectName* (): string =
-  "foo"
 
 
 

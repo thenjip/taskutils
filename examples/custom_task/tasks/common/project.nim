@@ -1,4 +1,4 @@
-import "../foo.nimble"
+import "../../foo.nimble"
 
 
 

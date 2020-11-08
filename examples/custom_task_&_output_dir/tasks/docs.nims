@@ -1,5 +1,5 @@
+import common/["env.nims", project]
 import docs/[envvar]
-import "common.nims"
 
 import pkg/taskutils/[
   cmdline,
