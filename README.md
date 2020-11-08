@@ -41,6 +41,10 @@ nimble install 'https://github.com/thenjip/taskutils'
 
 - [API](https://thenjip.github.io/taskutils/)
 
+## Examples
+
+Examples of integration with Nimble project files can be found [here](examples).
+
 ## Overview
 
 ### File iterators
