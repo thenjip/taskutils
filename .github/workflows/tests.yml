@@ -1,4 +1,4 @@
-name: Unit tests
+name: Tests
 on:
   push:
     branches-ignore:
@@ -15,7 +15,7 @@ jobs:
       matrix:
         nim_version: ['1.4.0']
 
-    name: 'Nim ${{ matrix.nim_version }}'
+    name: 'Unit tests: Nim ${{ matrix.nim_version }}'
     runs-on: ubuntu-latest
     container: 'nimlang/nim:${{ matrix.nim_version }}-alpine'
     timeout-minutes: 10
@@ -29,3 +29,24 @@ jobs:
 
       - name: 'Run the tests'
         run: nimble test
+
+  examples:
+    strategy:
+      fail-fast: false
+      matrix:
+        nim_version: ['1.4.0']
+
+    name: 'Examples: Nim ${{ matrix.nim_version }}'
+    runs-on: ubuntu-latest
+    container: 'nimlang/nim:${{ matrix.nim_version }}-alpine'
+    timeout-minutes: 10
+
+    steps:
+      - name: 'Checkout'
+        uses: 'actions/checkout@v2'
+
+      - name: 'Setup the project'
+        run: nimble install -dy
+
+      - name: 'Run the examples'' tasks'
+        run: nimble test_examples
