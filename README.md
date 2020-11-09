@@ -1,6 +1,6 @@
 # taskutils
 
-[![Build Status](https://github.com/thenjip/taskutils/workflows/Unit%20tests/badge.svg?branch=main)](https://github.com/thenjip/taskutils/actions?query=workflow%3A"Unit+tests"+branch%3A"main")
+[![Build Status](https://github.com/thenjip/taskutils/workflows/Unit%20tests/badge.svg?branch=main)](https://github.com/thenjip/taskutils/actions?query=workflow%3A"Tests"+branch%3A"main")
 [![Licence](https://img.shields.io/github/license/thenjip/taskutils.svg)](https://raw.githubusercontent.com/thenjip/taskutils/main/LICENSE)
 
 Various utilities for tasks in [NimScript](https://nim-lang.org/docs/nims.html).
@@ -40,6 +40,10 @@ nimble install 'https://github.com/thenjip/taskutils'
 ## Documentation
 
 - [API](https://thenjip.github.io/taskutils/)
+
+## Examples
+
+Examples of integration with Nimble project files can be found [here](examples).
 
 ## Overview
 

@@ -30,10 +30,57 @@ func nimbleCacheDir (): string =
   getCurrentDir() / nimbleCache()
 
 
+func examplesDir (): string =
+  "examples"
+
+
+
+type
+  Example {.pure.} = enum
+    CustomTask
+    CustomTaskOutputDir
+    TasksCommonEnvVars
+
+
+
+func projectDir (self: Example): string =
+  const dirs: array[Example, string] = [
+    examplesDir() / "custom_task",
+    examplesDir() / "custom_task_&_output_dir",
+    examplesDir() / "tasks_&_common_env_vars"
+  ]
+
+  dirs[self]
+
+
+func cmdList (self: Example): seq[string] =
+  const
+    docsTask = ["nimble", "docs"].join($' ')
+    testTask = ["nimble", "test"].join($' ')
+
+    cmdLists: array[Example, seq[string]] = [
+      @[docsTask],
+      @[
+        docsTask,
+        ["OUTDIR=\"cache/docs\"", docsTask].join($' ')
+      ],
+      @[
+        docsTask,
+        ["OUTDIR=\"cache/docs\"", docsTask].join($' '),
+        testTask,
+        ["OUTDIR=\"cache/test\"", testTask].join($' '),
+        ["OUTDIR=\"cache/test\"", "NIM_BACKEND=js", testTask].join($' ')
+      ]
+    ]
+
+  cmdLists[self]
+
+
 
 type
   Task {.pure.} = enum
     Test,
+    TestExamples,
     Docs,
     Clean
 
@@ -42,6 +89,7 @@ type
 func name (self: Task): string =
   const names: array[Task, string] = [
     "test",
+    "test_examples",
     "docs",
     "clean"
   ]
@@ -56,6 +104,7 @@ macro identifier (self: static Task): untyped =
 func description (self: Task): string =
   const descriptions: array[Task, string] = [
     "Run the tests.",
+    "Run the tasks in each example projects.",
     "Generate the API documentation.",
     "Clean the build directory."
   ]
@@ -75,8 +124,7 @@ macro define (self: static Task; body: Task -> void): untyped =
 
 
 
-define(
-  Task.Test,
+Task.Test.define(
   proc (_: Task) =
     func testsDir (): string =
       "tests"
@@ -94,8 +142,16 @@ define(
 )
 
 
-define(
-  Task.Docs,
+Task.TestExamples.define(
+  proc (_: Task) =
+    for example in Example:
+      withDir example.projectDir():
+        for cmd in example.cmdList():
+          cmd.exec()
+)
+
+
+Task.Docs.define(
   proc (task: Task) =
     func outputDir (): string =
       nimbleCacheDir() / task.name()
@@ -124,8 +180,7 @@ define(
 )
 
 
-define(
-  Task.Clean,
+Task.Clean.define(
   proc (_: Task) =
     proc tryRmDir (dir: string) =
       dir.rmDir()
