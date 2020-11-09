@@ -1,6 +1,6 @@
 # taskutils
 
-[![Build Status](https://github.com/thenjip/taskutils/workflows/Unit%20tests/badge.svg?branch=main)](https://github.com/thenjip/taskutils/actions?query=workflow%3A"Tests"+branch%3A"main")
+[![Build Status](https://github.com/thenjip/taskutils/workflows/Tests/badge.svg?branch=main)](https://github.com/thenjip/taskutils/actions?query=workflow%3A"Tests"+branch%3A"main")
 [![Licence](https://img.shields.io/github/license/thenjip/taskutils.svg)](https://raw.githubusercontent.com/thenjip/taskutils/main/LICENSE)
 
 Various utilities for tasks in [NimScript](https://nim-lang.org/docs/nims.html).
