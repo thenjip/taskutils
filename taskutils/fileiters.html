@@ -196,7 +196,10 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 <p>Yields the files in the directory <tt class="docutils literal"><span class="pre">dir</span></tt> with the extension <tt class="docutils literal"><span class="pre">ext</span></tt>.</p>
-<p><tt class="docutils literal"><span class="pre">ext</span></tt> should not include the separator. Symlinks are not followed. </p>
+<p>If <tt class="docutils literal"><span class="pre">relative = true</span></tt>, the yielded paths will be relative to <tt class="docutils literal"><span class="pre">dir</span></tt>. Otherwise, the yielded paths are <tt class="docutils literal"><span class="pre">dir / yielded</span></tt>.</p>
+<p>Complete absolute paths can be obtained by passing <tt class="docutils literal"><span class="pre">getCurrentDir() / dir</span></tt> as the first parameter.</p>
+<p><tt class="docutils literal"><span class="pre">ext</span></tt> should not include the separator.</p>
+<p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
 href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L16"
@@ -209,13 +212,15 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>Yields the files in the directory <tt class="docutils literal"><span class="pre">dir</span></tt> with the extension <tt class="docutils literal"><span class="pre">ext</span></tt>. The yielded paths are relative.</p>
-<p><tt class="docutils literal"><span class="pre">ext</span></tt> should not include the separator. Symlinks are not followed. </p>
+<p>Yields the files in the directory <tt class="docutils literal"><span class="pre">dir</span></tt> with the extension <tt class="docutils literal"><span class="pre">ext</span></tt>.</p>
+<p>The yielded paths are relative to <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">ext</span></tt> should not include the separator.</p>
+<p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L28"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L35"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L28" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L35" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="absoluteFiles.i,DirPath,string"></a>
@@ -223,13 +228,16 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>Yields the files in the directory <tt class="docutils literal"><span class="pre">dir</span></tt> with the extension <tt class="docutils literal"><span class="pre">ext</span></tt>. The yielded paths are absolute.</p>
-<p><tt class="docutils literal"><span class="pre">ext</span></tt> should not include the separator. Symlinks are not followed. </p>
+<p>Yields the files in the directory <tt class="docutils literal"><span class="pre">dir</span></tt> with the extension <tt class="docutils literal"><span class="pre">ext</span></tt>.</p>
+<p>The yielded paths are <tt class="docutils literal"><span class="pre">dir / yielded</span></tt>.</p>
+<p>Complete absolute paths can be obtained by passing <tt class="docutils literal"><span class="pre">getCurrentDir() / dir</span></tt> as the first parameter.</p>
+<p><tt class="docutils literal"><span class="pre">ext</span></tt> should not include the separator.</p>
+<p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L40"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L49"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L40" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L49" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="filesRec.i,DirPath,string,bool"></a>
@@ -238,12 +246,15 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 <p>Recursively iterates on the files in the directory <tt class="docutils literal"><span class="pre">dir</span></tt> with the extension <tt class="docutils literal"><span class="pre">ext</span></tt>.</p>
-<p><tt class="docutils literal"><span class="pre">ext</span></tt> should not include the separator. Symlinks are not followed. </p>
+<p>If <tt class="docutils literal"><span class="pre">relative = true</span></tt>, the yielded paths will be relative to <tt class="docutils literal"><span class="pre">dir</span></tt>. Otherwise, the yielded paths are <tt class="docutils literal"><span class="pre">dir / yielded</span></tt>.</p>
+<p>Complete absolute paths can be obtained by passing <tt class="docutils literal"><span class="pre">getCurrentDir() / dir</span></tt> as the first parameter.</p>
+<p><tt class="docutils literal"><span class="pre">ext</span></tt> should not include the separator.</p>
+<p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L53"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L67"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L53" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L67" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="relativeFilesRec.i,DirPath,string"></a>
@@ -251,13 +262,15 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>Recursively iterates on the files in the directory <tt class="docutils literal"><span class="pre">dir</span></tt> with the extension <tt class="docutils literal"><span class="pre">ext</span></tt>. The yielded paths are relative to <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
-<p><tt class="docutils literal"><span class="pre">ext</span></tt> should not include the separator. Symlinks are not followed. </p>
+<p>Recursively iterates on the files in the directory <tt class="docutils literal"><span class="pre">dir</span></tt> with the extension <tt class="docutils literal"><span class="pre">ext</span></tt>.</p>
+<p>The yielded paths are relative to <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">ext</span></tt> should not include the separator.</p>
+<p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L66"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L87"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L66" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L87" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="absoluteFilesRec.i,DirPath,string"></a>
@@ -265,13 +278,15 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>Recursively iterates on the files in the directory <tt class="docutils literal"><span class="pre">dir</span></tt> with the extension <tt class="docutils literal"><span class="pre">ext</span></tt>. The yielded paths are absolute.</p>
-<p><tt class="docutils literal"><span class="pre">ext</span></tt> should not include the separator. Symlinks are not followed. </p>
+<p>Recursively iterates on the files in the directory <tt class="docutils literal"><span class="pre">dir</span></tt> with the extension <tt class="docutils literal"><span class="pre">ext</span></tt>.</p>
+<p>Complete absolute paths can be obtained by passing <tt class="docutils literal"><span class="pre">getCurrentDir() / dir</span></tt> as the first parameter.</p>
+<p><tt class="docutils literal"><span class="pre">ext</span></tt> should not include the separator.</p>
+<p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L79"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L102"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L79" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L102" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="relativeNimModules.i,DirPath"></a>
@@ -279,13 +294,14 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>Yields the Nim modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>. The yielded paths are relative to <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p>Yields the Nim modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p>The yielded paths are relative to <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
 <p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L93"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L119"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L93" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L119" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="absoluteNimModules.i,DirPath"></a>
@@ -293,13 +309,15 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>Yields the Nim modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>. The yielded paths are absolute.</p>
+<p>Yields the Nim modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p>The yielded paths are <tt class="docutils literal"><span class="pre">dir / yielded</span></tt>.</p>
+<p>Complete absolute paths can be obtained by passing <tt class="docutils literal"><span class="pre">getCurrentDir() / dir</span></tt> as the first parameter.</p>
 <p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L104"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L131"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L104" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L131" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="relativeNimModulesRec.i,DirPath"></a>
@@ -307,13 +325,14 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>Recursively iterates on the Nim modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>. The yielded paths are relative to <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p>Recursively iterates on the Nim modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p>The yielded paths are relative to <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
 <p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L115"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L146"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L115" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L146" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="absoluteNimModulesRec.i,DirPath"></a>
@@ -321,13 +340,15 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>Recursively iterates on the Nim modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>. The yielded paths are absolute.</p>
+<p>Recursively iterates on the Nim modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p>The yielded paths are <tt class="docutils literal"><span class="pre">dir / yielded</span></tt>.</p>
+<p>Complete absolute paths can be obtained by passing <tt class="docutils literal"><span class="pre">getCurrentDir() / dir</span></tt> as the first parameter.</p>
 <p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L126"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L158"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L126" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L158" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="relativeNimsModules.i,DirPath"></a>
@@ -335,13 +356,14 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>Yields the NimScript modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>. The yielded paths are relative to <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p>Yields the NimScript modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p>The yielded paths are relative to <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
 <p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L138"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L174"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L138" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L174" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="absoluteNimsModules.i,DirPath"></a>
@@ -349,13 +371,15 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>Yields the NimScript modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>. The yielded paths are absolute.</p>
+<p>Yields the NimScript modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p>The yielded paths are <tt class="docutils literal"><span class="pre">dir / yielded</span></tt>.</p>
+<p>Complete absolute paths can be obtained by passing <tt class="docutils literal"><span class="pre">getCurrentDir() / dir</span></tt> as the first parameter.</p>
 <p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L149"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L186"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L149" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L186" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="relativeNimsModulesRec.i,DirPath"></a>
@@ -363,13 +387,14 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>Recursively iterates on the NimScript modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>. The yielded paths are relative to <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p>Recursively iterates on the NimScript modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p>The yielded paths are relative to <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
 <p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L160"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L201"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L160" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L201" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="absoluteNimsModulesRec.i,DirPath"></a>
@@ -377,13 +402,15 @@ class="link-seesrc" target="_blank">Source</a>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>Recursively iterates on the NimScript modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>. The yielded paths are absolute.</p>
+<p>Recursively iterates on the NimScript modules in the directory <tt class="docutils literal"><span class="pre">dir</span></tt>.</p>
+<p>The yielded paths are <tt class="docutils literal"><span class="pre">dir / yielded</span></tt>.</p>
+<p>Complete absolute paths can be obtained by passing <tt class="docutils literal"><span class="pre">getCurrentDir() / dir</span></tt> as the first parameter.</p>
 <p>Symlinks are not followed. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L171"
+href="https://github.com/thenjip/taskutils/tree/main/src/taskutils/fileiters.nim#L213"
 class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L171" class="link-seesrc" target="_blank" >Edit</a>
+<a href="https://github.com/thenjip/taskutils/edit/main/src/taskutils/fileiters.nim#L213" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -396,7 +423,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-11-09 12:38:50 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-11-10 08:59:20 UTC</small>
       </div>
     </div>
   </div>
