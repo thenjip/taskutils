@@ -39,7 +39,7 @@ proc testRelativeNimModules () =
   let
     expected = rootNimModules().toHashSet()
     actual =
-      collect(initHashSet(expected.len())):
+      collect initHashSet(expected.len()):
         for module in rootDir().relativeNimModules():
           {module}
 
@@ -49,9 +49,9 @@ proc testRelativeNimModules () =
 proc testAbsoluteNimModules () =
   let
     expected =
-      fooNimModules().map(f => getCurrentDir() / fooDir() / f).toHashSet()
+      fooNimModules().map(f => fooDir() / f).toHashSet()
     actual =
-      collect(initHashSet(expected.len())):
+      collect initHashSet(expected.len()):
         for module in fooDir().absoluteNimModules():
           {module}
 
@@ -65,7 +65,7 @@ proc testRelativeNimModulesRec () =
         .`&`(fooNimModules().map(f => fooDirName() / f))
         .toHashSet()
     actual =
-      collect(initHashSet(expected.len())):
+      collect initHashSet(expected.len()):
         for module in rootDir().relativeNimModulesRec():
           {module}
 
@@ -77,10 +77,10 @@ proc testAbsoluteNimModulesRec () =
     expected =
       rootNimModules()
         .`&`(fooNimModules().map(f => fooDirName() / f))
-        .map(f => getCurrentDir() / rootDir() / f)
+        .map(f => rootDir() / f)
         .toHashSet()
     actual =
-      collect(initHashSet(expected.len())):
+      collect initHashSet(expected.len()):
         for module in rootDir().absoluteNimModulesRec():
           {module}
 
