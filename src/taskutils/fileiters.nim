@@ -17,7 +17,14 @@ iterator files* (dir: DirPath; ext: string; relative: bool): FilePath =
   ##[
     Yields the files in the directory `dir` with the extension `ext`.
 
+    If `relative = true`, the yielded paths will be relative to `dir`.
+    Otherwise, the yielded paths are `dir / yielded`.
+
+    Complete absolute paths can be obtained by passing `getCurrentDir() / dir`
+    as the first parameter.
+
     `ext` should not include the separator.
+
     Symlinks are not followed.
   ]##
   for kind, file in dir.walkDir(relative = relative):
@@ -28,9 +35,11 @@ iterator files* (dir: DirPath; ext: string; relative: bool): FilePath =
 iterator relativeFiles* (dir: DirPath; ext: string): RelativeFile =
   ##[
     Yields the files in the directory `dir` with the extension `ext`.
-    The yielded paths are relative.
+
+    The yielded paths are relative to `dir`.
 
     `ext` should not include the separator.
+
     Symlinks are not followed.
   ]##
   for file in dir.files(ext, relative = true):
@@ -40,13 +49,18 @@ iterator relativeFiles* (dir: DirPath; ext: string): RelativeFile =
 iterator absoluteFiles* (dir: DirPath; ext: string): AbsoluteFile =
   ##[
     Yields the files in the directory `dir` with the extension `ext`.
-    The yielded paths are absolute.
+
+    The yielded paths are `dir / yielded`.
+
+    Complete absolute paths can be obtained by passing `getCurrentDir() / dir`
+    as the first parameter.
 
     `ext` should not include the separator.
+
     Symlinks are not followed.
   ]##
   for file in dir.files(ext, relative = false):
-    yield getCurrentDir() / file
+    yield file
 
 
 
@@ -55,7 +69,14 @@ iterator filesRec* (dir: DirPath; ext: string; relative: bool): FilePath =
     Recursively iterates on the files in the directory `dir` with the extension
     `ext`.
 
+    If `relative = true`, the yielded paths will be relative to `dir`.
+    Otherwise, the yielded paths are `dir / yielded`.
+
+    Complete absolute paths can be obtained by passing `getCurrentDir() / dir`
+    as the first parameter.
+
     `ext` should not include the separator.
+
     Symlinks are not followed.
   ]##
   for file in dir.walkDirRec(relative = relative):
@@ -67,12 +88,14 @@ iterator relativeFilesRec* (dir: DirPath; ext: string): RelativeFile =
   ##[
     Recursively iterates on the files in the directory `dir` with the extension
     `ext`.
+
     The yielded paths are relative to `dir`.
 
     `ext` should not include the separator.
+
     Symlinks are not followed.
   ]##
-  for file in dir.filesRec(ext, true):
+  for file in dir.filesRec(ext, relative = true):
     yield file
 
 
@@ -80,19 +103,23 @@ iterator absoluteFilesRec* (dir: DirPath; ext: string): AbsoluteFile =
   ##[
     Recursively iterates on the files in the directory `dir` with the extension
     `ext`.
-    The yielded paths are absolute.
+
+    Complete absolute paths can be obtained by passing `getCurrentDir() / dir`
+    as the first parameter.
 
     `ext` should not include the separator.
+
     Symlinks are not followed.
   ]##
-  for file in dir.filesRec(ext, false):
-    yield getCurrentDir() / file
+  for file in dir.filesRec(ext, relative = false):
+    yield file
 
 
 
 iterator relativeNimModules* (dir: DirPath): RelativeFile =
   ##[
     Yields the Nim modules in the directory `dir`.
+
     The yielded paths are relative to `dir`.
 
     Symlinks are not followed.
@@ -104,7 +131,11 @@ iterator relativeNimModules* (dir: DirPath): RelativeFile =
 iterator absoluteNimModules* (dir: DirPath): AbsoluteFile =
   ##[
     Yields the Nim modules in the directory `dir`.
-    The yielded paths are absolute.
+
+    The yielded paths are `dir / yielded`.
+
+    Complete absolute paths can be obtained by passing `getCurrentDir() / dir`
+    as the first parameter.
 
     Symlinks are not followed.
   ]##
@@ -115,6 +146,7 @@ iterator absoluteNimModules* (dir: DirPath): AbsoluteFile =
 iterator relativeNimModulesRec* (dir: DirPath): RelativeFile =
   ##[
     Recursively iterates on the Nim modules in the directory `dir`.
+
     The yielded paths are relative to `dir`.
 
     Symlinks are not followed.
@@ -126,7 +158,11 @@ iterator relativeNimModulesRec* (dir: DirPath): RelativeFile =
 iterator absoluteNimModulesRec* (dir: DirPath): AbsoluteDir =
   ##[
     Recursively iterates on the Nim modules in the directory `dir`.
-    The yielded paths are absolute.
+
+    The yielded paths are `dir / yielded`.
+
+    Complete absolute paths can be obtained by passing `getCurrentDir() / dir`
+    as the first parameter.
 
     Symlinks are not followed.
   ]##
@@ -138,6 +174,7 @@ iterator absoluteNimModulesRec* (dir: DirPath): AbsoluteDir =
 iterator relativeNimsModules* (dir: DirPath): RelativeFile =
   ##[
     Yields the NimScript modules in the directory `dir`.
+
     The yielded paths are relative to `dir`.
 
     Symlinks are not followed.
@@ -149,7 +186,11 @@ iterator relativeNimsModules* (dir: DirPath): RelativeFile =
 iterator absoluteNimsModules* (dir: DirPath): AbsoluteFile =
   ##[
     Yields the NimScript modules in the directory `dir`.
-    The yielded paths are absolute.
+
+    The yielded paths are `dir / yielded`.
+
+    Complete absolute paths can be obtained by passing `getCurrentDir() / dir`
+    as the first parameter.
 
     Symlinks are not followed.
   ]##
@@ -160,6 +201,7 @@ iterator absoluteNimsModules* (dir: DirPath): AbsoluteFile =
 iterator relativeNimsModulesRec* (dir: DirPath): RelativeFile =
   ##[
     Recursively iterates on the NimScript modules in the directory `dir`.
+
     The yielded paths are relative to `dir`.
 
     Symlinks are not followed.
@@ -171,7 +213,11 @@ iterator relativeNimsModulesRec* (dir: DirPath): RelativeFile =
 iterator absoluteNimsModulesRec* (dir: DirPath): AbsoluteDir =
   ##[
     Recursively iterates on the NimScript modules in the directory `dir`.
-    The yielded paths are absolute.
+
+    The yielded paths are `dir / yielded`.
+
+    Complete absolute paths can be obtained by passing `getCurrentDir() / dir`
+    as the first parameter.
 
     Symlinks are not followed.
   ]##
