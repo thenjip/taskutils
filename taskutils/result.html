@@ -101,9 +101,9 @@ function main() {
       success: S
 
   of false:
-      failure: F"><wbr />Result<span class="attachedType"></span></a></li>
+      failure: F">Result</a></li>
   <li><a class="reference" href="#UnboxError"
-    title="UnboxError = object of CatchableError"><wbr />Unbox<wbr />Error<span class="attachedType"></span></a></li>
+    title="UnboxError = object of CatchableError">UnboxError</a></li>
 
   </ul>
 </li>
@@ -112,22 +112,22 @@ function main() {
   <ul class="simple simple-toc-section">
       <ul class="simple nested-toc-section">map
       <li><a class="reference" href="#map%2CResult%5BA%2CF%5D%2C"
-    title="map[A; B; F](self: Result[A, F]; f: A -&gt; B): Result[B, F]">map,Result[A,F],<span class="attachedType">Result</span></a></li>
+    title="map[A; B; F](self: Result[A, F]; f: A -&gt; B): Result[B, F]">map,<wbr>Result[A,<wbr>F],<wbr></a></li>
 
   </ul>
   <ul class="simple nested-toc-section">flatMap
       <li><a class="reference" href="#flatMap%2CResult%5BA%2CF%5D%2C"
-    title="flatMap[A; B; F](self: Result[A, F]; f: A -&gt; Result[B, F]): Result[B, F]">flatMap,Result[A,F],<span class="attachedType">Result</span></a></li>
+    title="flatMap[A; B; F](self: Result[A, F]; f: A -&gt; Result[B, F]): Result[B, F]">flatMap,<wbr>Result[A,<wbr>F],<wbr></a></li>
 
   </ul>
   <ul class="simple nested-toc-section">ifSuccess
       <li><a class="reference" href="#ifSuccess%2CResult%5BS%2CF%5D%2C%2C"
-    title="ifSuccess[S; F; T](self: Result[S, F]; then: S -&gt; T; else: F -&gt; T): T">ifSuccess,Result[S,F],,<span class="attachedType">Result</span></a></li>
+    title="ifSuccess[S; F; T](self: Result[S, F]; then: S -&gt; T; else: F -&gt; T): T">ifSuccess,<wbr>Result[S,<wbr>F],<wbr>,<wbr></a></li>
 
   </ul>
   <ul class="simple nested-toc-section">ifFailure
       <li><a class="reference" href="#ifFailure%2CResult%5BS%2CF%5D%2C%2C"
-    title="ifFailure[S; F; T](self: Result[S, F]; then: F -&gt; T; else: S -&gt; T): T">ifFailure,Result[S,F],,<span class="attachedType">Result</span></a></li>
+    title="ifFailure[S; F; T](self: Result[S, F]; then: F -&gt; T; else: S -&gt; T): T">ifFailure,<wbr>Result[S,<wbr>F],<wbr>,<wbr></a></li>
 
   </ul>
 
@@ -138,44 +138,44 @@ function main() {
   <ul class="simple simple-toc-section">
       <ul class="simple nested-toc-section">unboxFailure
       <li><a class="reference" href="#unboxFailure%2CResult%5BS%2CF%5D"
-    title="unboxFailure[S; F](self: Result[S, F]): F">unboxFailure,Result[S,F]<span class="attachedType">Result</span></a></li>
+    title="unboxFailure[S; F](self: Result[S, F]): F">unboxFailure,<wbr>Result[S,<wbr>F]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">unboxSuccess
       <li><a class="reference" href="#unboxSuccess%2CResult%5BS%2CF%5D"
-    title="unboxSuccess[S; F](self: Result[S, F]): S">unboxSuccess,Result[S,F]<span class="attachedType">Result</span></a></li>
+    title="unboxSuccess[S; F](self: Result[S, F]): S">unboxSuccess,<wbr>Result[S,<wbr>F]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">success
       <li><a class="reference" href="#success%2CS%2Ctypedesc"
-    title="success[S](value: S; F: typedesc): Result[S, F]">success,S,typedesc<span class="attachedType">Result</span></a></li>
+    title="success[S](value: S; F: typedesc): Result[S, F]">success,<wbr>S,<wbr>typedesc</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">unboxSuccessOrRaise
       <li><a class="reference" href="#unboxSuccessOrRaise%2CResult%5BS%2Cref.E%5D"
-    title="unboxSuccessOrRaise[S; E: CatchableError](self: Result[S, ref E]): S">unboxSuccessOrRaise,Result[S,ref.E]<span class="attachedType">Result</span></a></li>
+    title="unboxSuccessOrRaise[S; E: CatchableError](self: Result[S, ref E]): S">unboxSuccessOrRaise,<wbr>Result[S,<wbr>ref.E]</a></li>
   <li><a class="reference" href="#unboxSuccessOrRaise%2CResult%5BS%2Cproc%29%5D"
-    title="unboxSuccessOrRaise[S; E: CatchableError](self: Result[S, proc (): ref E]): S">unboxSuccessOrRaise,Result[S,proc)]<span class="attachedType">Result</span></a></li>
+    title="unboxSuccessOrRaise[S; E: CatchableError](self: Result[S, proc (): ref E]): S">unboxSuccessOrRaise,<wbr>Result[S,<wbr>proc)]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">isSuccess
       <li><a class="reference" href="#isSuccess%2CResult%5BS%2CF%5D"
-    title="isSuccess[S; F](self: Result[S, F]): bool">isSuccess,Result[S,F]<span class="attachedType">Result</span></a></li>
+    title="isSuccess[S; F](self: Result[S, F]): bool">isSuccess,<wbr>Result[S,<wbr>F]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">failure
       <li><a class="reference" href="#failure%2CF%2Ctypedesc"
-    title="failure[F](value: F; S: typedesc): Result[S, F]">failure,F,typedesc<span class="attachedType">Result</span></a></li>
+    title="failure[F](value: F; S: typedesc): Result[S, F]">failure,<wbr>F,<wbr>typedesc</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">isFailure
       <li><a class="reference" href="#isFailure%2CResult%5BS%2CF%5D"
-    title="isFailure[S; F](self: Result[S, F]): bool">isFailure,Result[S,F]<span class="attachedType">Result</span></a></li>
+    title="isFailure[S; F](self: Result[S, F]): bool">isFailure,<wbr>Result[S,<wbr>F]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">==
       <li><a class="reference" href="#%3D%3D%2CResult%5BS%2CF%5D%2CResult%5BS%2CF%5D"
-    title="`==`[S; F](self, other: Result[S, F]): bool">==,Result[S,F],Result[S,F]<span class="attachedType">Result</span></a></li>
+    title="`==`[S; F](self, other: Result[S, F]): bool">==,<wbr>Result[S,<wbr>F],<wbr>Result[S,<wbr>F]</a></li>
 
   </ul>
 
@@ -185,13 +185,13 @@ function main() {
   <a class="reference reference-toplevel" href="#18" id="68">Templates</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#successType.t%2Ctypedesc%5BResult%5BS%2CF%5D%5D"
-    title="successType[S; F; ](X: typedesc[Result[S, F]]): typedesc[S]"><wbr />success<wbr />Type<span class="attachedType">Result</span></a></li>
+    title="successType[S; F; ](X: typedesc[Result[S, F]]): typedesc[S]">successType</a></li>
   <li><a class="reference" href="#failureType.t%2Ctypedesc%5BResult%5BS%2CF%5D%5D"
-    title="failureType[S; F; ](X: typedesc[Result[S, F]]): typedesc[F]"><wbr />failure<wbr />Type<span class="attachedType">Result</span></a></li>
+    title="failureType[S; F; ](X: typedesc[Result[S, F]]): typedesc[F]">failureType</a></li>
   <li><a class="reference" href="#successType.t%2CResult%5BS%2CF%5D"
-    title="successType[S; F; ](self: Result[S, F]): typedesc[S]"><wbr />success<wbr />Type<span class="attachedType">Result</span></a></li>
+    title="successType[S; F; ](self: Result[S, F]): typedesc[S]">successType</a></li>
   <li><a class="reference" href="#failureType.t%2CResult%5BS%2CF%5D"
-    title="failureType[S; F; ](self: Result[S, F]): typedesc[F]"><wbr />failure<wbr />Type<span class="attachedType">Result</span></a></li>
+    title="failureType[S; F; ](self: Result[S, F]): typedesc[F]">failureType</a></li>
 
   </ul>
 </li>
@@ -453,7 +453,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-11-10 09:07:39 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-12-04 11:03:46 UTC</small>
       </div>
     </div>
   </div>
